@@ -6,18 +6,19 @@
 //
 
 // demo targets:
-// - securely store access_token in keychain after fetch
-// - restore access_token from keychain on launch, when applicable, otherwise use existing login flow
+// - debug friendly error handling
 // - user friendly errors
+// - launch details
 
 // demo 2 targets:
-// - dark mode
-
-// all todos:
 // - TokenManager does too much
 // - ContentView does too much, use MVVM pattern
-// - introduce abstractions over ThreadQueue.main.dataTask in NetworkManager? - in progress. doesnt work as i expect immediately - still cant get this to work, backend responds with 403 or 401... but im providing bearer token?
-// - debug logging?
+// - dark mode
+// - ctrl F "TODO"
+// - introduce abstractions over ThreadQueue.main.dataTask in NetworkManager?
+// - debug logging
+// - unit testing
+// - swiftlint integration
 
 import SwiftUI
 
