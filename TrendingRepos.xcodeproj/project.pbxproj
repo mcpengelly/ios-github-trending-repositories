@@ -12,7 +12,11 @@
 		915DED5A2A01F1AF00632613 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 915DED592A01F1AF00632613 /* Assets.xcassets */; };
 		915DED5D2A01F1AF00632613 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 915DED5C2A01F1AF00632613 /* Preview Assets.xcassets */; };
 		915DED642A01F21700632613 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915DED632A01F21700632613 /* NetworkManager.swift */; };
-		91AFE9322A11A4600033B388 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AFE9312A11A4600033B388 /* WebView.swift */; };
+		91B02DCF2A3E163800FD1BBC /* RepoStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B02DCE2A3E163800FD1BBC /* RepoStats.swift */; };
+		91B02DD12A3E165900FD1BBC /* RepoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B02DD02A3E165900FD1BBC /* RepoList.swift */; };
+		91B02DD32A3E1A7800FD1BBC /* RepoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B02DD22A3E1A7800FD1BBC /* RepoItem.swift */; };
+		91B02F682A47773700FD1BBC /* TokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B02F672A47773700FD1BBC /* TokenManager.swift */; };
+		91B02F6E2A5480EB00FD1BBC /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B02F6D2A5480EB00FD1BBC /* KeychainHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,7 +27,11 @@
 		915DED5C2A01F1AF00632613 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		915DED632A01F21700632613 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		91AFE9302A11A2CD0033B388 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		91AFE9312A11A4600033B388 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		91B02DCE2A3E163800FD1BBC /* RepoStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoStats.swift; sourceTree = "<group>"; };
+		91B02DD02A3E165900FD1BBC /* RepoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoList.swift; sourceTree = "<group>"; };
+		91B02DD22A3E1A7800FD1BBC /* RepoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoItem.swift; sourceTree = "<group>"; };
+		91B02F672A47773700FD1BBC /* TokenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenManager.swift; sourceTree = "<group>"; };
+		91B02F6D2A5480EB00FD1BBC /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,13 +64,17 @@
 		915DED542A01F1AE00632613 /* TrendingRepos */ = {
 			isa = PBXGroup;
 			children = (
-				91AFE9312A11A4600033B388 /* WebView.swift */,
+				91B02F672A47773700FD1BBC /* TokenManager.swift */,
+				91B02DD22A3E1A7800FD1BBC /* RepoItem.swift */,
+				91B02DD02A3E165900FD1BBC /* RepoList.swift */,
 				91AFE9302A11A2CD0033B388 /* Info.plist */,
 				915DED632A01F21700632613 /* NetworkManager.swift */,
 				915DED552A01F1AE00632613 /* TrendingReposApp.swift */,
 				915DED572A01F1AE00632613 /* ContentView.swift */,
 				915DED592A01F1AF00632613 /* Assets.xcassets */,
 				915DED5B2A01F1AF00632613 /* Preview Content */,
+				91B02DCE2A3E163800FD1BBC /* RepoStats.swift */,
+				91B02F6D2A5480EB00FD1BBC /* KeychainHelper.swift */,
 			);
 			path = TrendingRepos;
 			sourceTree = "<group>";
@@ -146,9 +158,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				915DED642A01F21700632613 /* NetworkManager.swift in Sources */,
-				91AFE9322A11A4600033B388 /* WebView.swift in Sources */,
+				91B02DD12A3E165900FD1BBC /* RepoList.swift in Sources */,
+				91B02DCF2A3E163800FD1BBC /* RepoStats.swift in Sources */,
 				915DED582A01F1AE00632613 /* ContentView.swift in Sources */,
+				91B02F6E2A5480EB00FD1BBC /* KeychainHelper.swift in Sources */,
 				915DED562A01F1AE00632613 /* TrendingReposApp.swift in Sources */,
+				91B02DD32A3E1A7800FD1BBC /* RepoItem.swift in Sources */,
+				91B02F682A47773700FD1BBC /* TokenManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

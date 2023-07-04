@@ -7,207 +7,139 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "5C617BB8-68A8-445D-ADDE-72C231305AE3"
+            uuid = "6D550A75-194E-40D6-B51E-96780128C75B"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TrendingRepos/TrendingReposApp.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "14"
-            endingLineNumber = "14"
-            landmarkName = "body"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "D866D49B-EC1A-4426-B0A7-81A37CFED08D"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TrendingRepos/NetworkManager.swift"
+            filePath = "TrendingRepos/TokenManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "46"
             endingLineNumber = "46"
-            landmarkName = "fetchTrendingRepos(timeFrame:completion:)"
+            landmarkName = "checkIfRepoStarred(repoOwner:repoName:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "7B3873A4-C0B7-4043-A83F-E3648775F200"
+            uuid = "9FAE9BDF-11E3-410F-A26B-C9C90B4CAA3F"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TrendingRepos/NetworkManager.swift"
+            filePath = "TrendingRepos/TokenManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
-            landmarkName = "fetchTrendingRepos(timeFrame:completion:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "7B3873A4-C0B7-4043-A83F-E3648775F200 - 7ae272abbccfc819"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TrendingRepos.NetworkManager.fetchTrendingRepos(timeFrame: Swift.String, completion: (Swift.Result&lt;Swift.Array&lt;TrendingRepos.Repo&gt;, Swift.Error&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "TrendingRepos"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mpengelly/Documents/workspace/swift/TrendingRepos/TrendingRepos/NetworkManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "33"
-                  endingLineNumber = "33"
-                  offsetFromSymbolStart = "1688">
-               </Location>
-               <Location
-                  uuid = "7B3873A4-C0B7-4043-A83F-E3648775F200 - 10ac1fedee1aef85"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in TrendingRepos.NetworkManager.fetchTrendingRepos(timeFrame: Swift.String, completion: (Swift.Result&lt;Swift.Array&lt;TrendingRepos.Repo&gt;, Swift.Error&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "TrendingRepos"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mpengelly/Documents/workspace/swift/TrendingRepos/TrendingRepos/NetworkManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "34"
-                  endingLineNumber = "34"
-                  offsetFromSymbolStart = "144">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "D9F7DBC1-64E3-4259-A576-29BAAA798ADA"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TrendingRepos/ContentView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "14"
-            endingLineNumber = "14"
-            landmarkName = "TimeFrame"
-            landmarkType = "13">
-            <Locations>
-               <Location
-                  uuid = "D9F7DBC1-64E3-4259-A576-29BAAA798ADA - 3cd622f255b9f6e8"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TrendingRepos.ContentView.TimeFrame.init(rawValue: Swift.String) -&gt; Swift.Optional&lt;TrendingRepos.ContentView.TimeFrame&gt;"
-                  moduleName = "TrendingRepos"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mpengelly/Documents/workspace/swift/TrendingRepos/TrendingRepos/ContentView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "9"
-                  endingLineNumber = "9"
-                  offsetFromSymbolStart = "100">
-               </Location>
-               <Location
-                  uuid = "D9F7DBC1-64E3-4259-A576-29BAAA798ADA - 8c7af4ef275304d3"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "TrendingRepos.ContentView.TimeFrame.rawValue.getter : Swift.String"
-                  moduleName = "TrendingRepos"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mpengelly/Documents/workspace/swift/TrendingRepos/TrendingRepos/ContentView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "9"
-                  endingLineNumber = "9"
-                  offsetFromSymbolStart = "88">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "A2AFAAAF-7E07-4ECA-838F-B06161E9D68E"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TrendingRepos/TrendingReposApp.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "15"
-            endingLineNumber = "15"
-            landmarkName = "body"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "F0C6C789-6E8A-4AC3-9943-E2253591B002"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TrendingRepos/WebView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
-            landmarkName = "updateUIView(_:context:)"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "checkIfRepoStarred(repoOwner:repoName:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "8D6AD6CD-36ED-4F8F-BBE8-C4674E446E69"
+            uuid = "0D6621C2-1981-4E5F-97B4-3B5CA02F53E6"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TrendingRepos/WebView.swift"
+            filePath = "TrendingRepos/TokenManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
-            landmarkName = "updateUIView(_:context:)"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "checkIfRepoStarred(repoOwner:repoName:completion:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "8D6AD6CD-36ED-4F8F-BBE8-C4674E446E69 - 641ffc90095cea75"
+                  uuid = "0D6621C2-1981-4E5F-97B4-3B5CA02F53E6 - 81112162114dd7e2"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "TrendingRepos.WebView.updateUIView(_: __C.WKWebView, context: SwiftUI.UIViewRepresentableContext&lt;TrendingRepos.WebView&gt;) -&gt; ()"
+                  symbolName = "TrendingRepos.TokenManager.checkIfRepoStarred(repoOwner: Swift.String, repoName: Swift.String, completion: (Swift.Optional&lt;Swift.Bool&gt;) -&gt; ()) -&gt; ()"
                   moduleName = "TrendingRepos"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mpengelly/Documents/workspace/swift/TrendingRepos/TrendingRepos/WebView.swift"
+                  urlString = "file:///Users/mpengelly/Documents/workspace/swift/TrendingRepos/TrendingRepos/TokenManager.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "20"
-                  endingLineNumber = "20"
-                  offsetFromSymbolStart = "208">
+                  startingLineNumber = "43"
+                  endingLineNumber = "43"
+                  offsetFromSymbolStart = "1404">
                </Location>
                <Location
-                  uuid = "8D6AD6CD-36ED-4F8F-BBE8-C4674E446E69 - 641ffc90095cea75"
+                  uuid = "0D6621C2-1981-4E5F-97B4-3B5CA02F53E6 - fd18beb5208615e8"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "TrendingRepos.WebView.updateUIView(_: __C.WKWebView, context: SwiftUI.UIViewRepresentableContext&lt;TrendingRepos.WebView&gt;) -&gt; ()"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in TrendingRepos.TokenManager.checkIfRepoStarred(repoOwner: Swift.String, repoName: Swift.String, completion: (Swift.Optional&lt;Swift.Bool&gt;) -&gt; ()) -&gt; ()"
                   moduleName = "TrendingRepos"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/mpengelly/Documents/workspace/swift/TrendingRepos/TrendingRepos/WebView.swift"
+                  urlString = "file:///Users/mpengelly/Documents/workspace/swift/TrendingRepos/TrendingRepos/TokenManager.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "20"
-                  endingLineNumber = "20"
-                  offsetFromSymbolStart = "288">
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "132">
+               </Location>
+               <Location
+                  uuid = "0D6621C2-1981-4E5F-97B4-3B5CA02F53E6 - 81112162114dd7a4"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TrendingRepos.TokenManager.checkIfRepoStarred(repoOwner: Swift.String, repoName: Swift.String, completion: (Swift.Optional&lt;Swift.Bool&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "TrendingRepos"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mpengelly/Documents/workspace/swift/TrendingRepos/TrendingRepos/TokenManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "908">
+               </Location>
+               <Location
+                  uuid = "0D6621C2-1981-4E5F-97B4-3B5CA02F53E6 - fd18beb5208615aa"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in TrendingRepos.TokenManager.checkIfRepoStarred(repoOwner: Swift.String, repoName: Swift.String, completion: (Swift.Optional&lt;Swift.Bool&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "TrendingRepos"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mpengelly/Documents/workspace/swift/TrendingRepos/TrendingRepos/TokenManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "132">
+               </Location>
+               <Location
+                  uuid = "0D6621C2-1981-4E5F-97B4-3B5CA02F53E6 - 81112162114dd749"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TrendingRepos.TokenManager.checkIfRepoStarred(repoOwner: Swift.String, repoName: Swift.String, completion: (Swift.Optional&lt;Swift.Bool&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "TrendingRepos"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mpengelly/Documents/workspace/swift/TrendingRepos/TrendingRepos/TokenManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "1224">
+               </Location>
+               <Location
+                  uuid = "0D6621C2-1981-4E5F-97B4-3B5CA02F53E6 - fd18beb5208615aa"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in TrendingRepos.TokenManager.checkIfRepoStarred(repoOwner: Swift.String, repoName: Swift.String, completion: (Swift.Optional&lt;Swift.Bool&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "TrendingRepos"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mpengelly/Documents/workspace/swift/TrendingRepos/TrendingRepos/TokenManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
+                  offsetFromSymbolStart = "140">
                </Location>
             </Locations>
          </BreakpointContent>
