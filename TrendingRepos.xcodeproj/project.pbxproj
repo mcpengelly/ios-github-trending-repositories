@@ -17,6 +17,7 @@
 		91B02DD32A3E1A7800FD1BBC /* RepoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B02DD22A3E1A7800FD1BBC /* RepoItem.swift */; };
 		91B02F682A47773700FD1BBC /* TokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B02F672A47773700FD1BBC /* TokenManager.swift */; };
 		91B02F6E2A5480EB00FD1BBC /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B02F6D2A5480EB00FD1BBC /* KeychainHelper.swift */; };
+		91B02F702A55C77000FD1BBC /* RepoDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B02F6F2A55C77000FD1BBC /* RepoDetailsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		91B02DD22A3E1A7800FD1BBC /* RepoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoItem.swift; sourceTree = "<group>"; };
 		91B02F672A47773700FD1BBC /* TokenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenManager.swift; sourceTree = "<group>"; };
 		91B02F6D2A5480EB00FD1BBC /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
+		91B02F6F2A55C77000FD1BBC /* RepoDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoDetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				915DED5B2A01F1AF00632613 /* Preview Content */,
 				91B02DCE2A3E163800FD1BBC /* RepoStats.swift */,
 				91B02F6D2A5480EB00FD1BBC /* KeychainHelper.swift */,
+				91B02F6F2A55C77000FD1BBC /* RepoDetailsView.swift */,
 			);
 			path = TrendingRepos;
 			sourceTree = "<group>";
@@ -161,6 +164,7 @@
 				91B02DD12A3E165900FD1BBC /* RepoList.swift in Sources */,
 				91B02DCF2A3E163800FD1BBC /* RepoStats.swift in Sources */,
 				915DED582A01F1AE00632613 /* ContentView.swift in Sources */,
+				91B02F702A55C77000FD1BBC /* RepoDetailsView.swift in Sources */,
 				91B02F6E2A5480EB00FD1BBC /* KeychainHelper.swift in Sources */,
 				915DED562A01F1AE00632613 /* TrendingReposApp.swift in Sources */,
 				91B02DD32A3E1A7800FD1BBC /* RepoItem.swift in Sources */,

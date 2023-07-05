@@ -6,7 +6,6 @@ class NetworkManager {
     
     private init() {}
     
-    // TODO: language filters
     func fetchTrendingRepos(timeFrame: String = "daily", completion: @escaping (Result<[SearchResult], Error>) -> Void) {
         let urlString = "https://api.gitterapp.com/repositories?&since=\(timeFrame)"
         guard let encodedURLString = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),

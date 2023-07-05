@@ -8,6 +8,7 @@ import Foundation
 import Security
 
 // using baremetal api for securely storing access_token to IOS Keychain for persistent login
+// these come from the IOS Keychain documentation itself, so its save to use
 struct KeychainHelper {
     private static let service: String = Bundle.main.bundleIdentifier ?? "defaultBundleID"
 

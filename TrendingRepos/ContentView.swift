@@ -36,7 +36,7 @@ struct ContentView: View {
     }
     
     var body: some View {
-        // TODO: MVVM
+        // TODO: MVVM, THIS FILE IS WAY TOO COMPLICATED FOR A CONTENTVIEW
         TabView(selection: $selectedTimeFrame) {
             ForEach(TimeFrame.allCases, id: \.self) { timeFrame in
                 ScrollView {
@@ -94,7 +94,7 @@ struct ContentView: View {
                 }
             case .failure(let error):
                 print("Error fetching repos: \(error)")
-                // hasError state?
+                // TODO: modal/toast popup or hasError state?
             }
             isLoading = false
         }
@@ -106,7 +106,6 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
-
 
 // easily create a Color from a hex value
 extension Color {
@@ -127,7 +126,7 @@ extension Color {
     }
 }
 
-// necessary abstraction?
+// TODO: determine whether this is simply a wrapper class or a useful abstraction
 extension URL {
     var queryParameters: [String: String]? {
         guard let components = URLComponents(url: self, resolvingAgainstBaseURL: true),
