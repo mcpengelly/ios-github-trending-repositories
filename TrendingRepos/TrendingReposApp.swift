@@ -6,19 +6,21 @@
 //
 
 // demo targets:
+// - ContentView does too much, use MVVM pattern
 // - debug friendly error handling
 // - user friendly errors
+// - unit testing the most important parts
+// - swiftlint integration
+// - convert to futures instead of callbacks
 // - launch details
+// - double check to make sure access_token isnt unsecurely stored for any reason, for example to update ui
+// - TokenManager does too much, exclude the parts that have to do with GithubAPI
 
 // demo 2 targets:
-// - TokenManager does too much
-// - ContentView does too much, use MVVM pattern
-// - dark mode
 // - ctrl F "TODO"
 // - introduce abstractions over ThreadQueue.main.dataTask in NetworkManager?
 // - debug logging
-// - unit testing
-// - swiftlint integration
+// - dark mode
 
 import SwiftUI
 
