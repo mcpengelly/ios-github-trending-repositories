@@ -7,7 +7,7 @@
 import Foundation
 
 class TokenManager: ObservableObject {
-    @Published var accessToken: String? = nil // Published ensures the UI updates occur for those relying on this
+    @Published var accessToken: String? // Published ensures the UI updates occur for those relying on this
     
     func setAccessToken(_ token: String) {
         DispatchQueue.main.async { [self] in
@@ -34,8 +34,8 @@ class TokenManager: ObservableObject {
         }
     }
     
-    //TODO: refactor out generic request handler stuff
-    func checkIfRepoStarred(repoOwner: String, repoName: String, completion: @escaping (Bool?) -> Void){
+    // TODO: refactor out generic request handler stuff
+    func checkIfRepoStarred(repoOwner: String, repoName: String, completion: @escaping (Bool?) -> Void) {
         guard let token = self.getAccessToken() else {
             Logger.shared.error("token is not availabe, cannot check repo status without auth.")
             return
@@ -53,7 +53,7 @@ class TokenManager: ObservableObject {
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.addValue("application/json", forHTTPHeaderField: "Content-Type") // REQUIRED
         
-        URLSession.shared.dataTask(with: request) { data, response, error in
+        URLSession.shared.dataTask(with: request) { _, response, error in
             if let error = error {
                 // TODO: use completion handler .failure instead
                 Logger.shared.error("Failed to check if repository starred. Error: \(error)")
@@ -63,11 +63,11 @@ class TokenManager: ObservableObject {
             if let response = response as? HTTPURLResponse {
                 // 404 is the not starred case, 204 is the starred case
                 if response.statusCode == 204 {
-                    Logger.shared.info("Respository status: starred")
+                    Logger.shared.debug("Repository status: starred")
                     // TODO: use completion handler .success with a boolean variable inside?
                     completion(true)
                 } else {
-                    Logger.shared.info("Respository status: not starred")
+                    Logger.shared.debug("Repository status: not starred")
                     // TODO: use completion handler .success with a boolean variable inside?
                     completion(false)
                 }
@@ -99,7 +99,7 @@ class TokenManager: ObservableObject {
             request.setValue("0", forHTTPHeaderField: "Content-Length") // recommended in docs for PUT
         }
         
-        URLSession.shared.dataTask(with: request) { data, response, error in
+        URLSession.shared.dataTask(with: request) { _, response, error in
             if let error = error {
                 Logger.shared.error("Error: \(error)")
                 return
@@ -110,18 +110,18 @@ class TokenManager: ObservableObject {
                 Logger.shared.debug("Status code: \(response.statusCode)")
                 if response.statusCode == 204 {
                     if isRepoStarred {
-                        Logger.shared.info("Repo unstarred successfully")
+                        Logger.shared.debug("Repo unstarred successfully")
                         // TODO: use completion handler .success instead
                         completion(false)
                     } else {
-                        Logger.shared.info("Repo starred successfully")
+                        Logger.shared.debug("Repo starred successfully")
                         // TODO: use completion handler .success instead
                         completion(true)
                     }
                 } else {
                     completion(false)
                     // TODO: use completion handler .failure instead
-                    Logger.shared.info("Failed to toggle respository star")
+                    Logger.shared.error("Failed to toggle respository star")
                 }
             }
         }.resume()
@@ -152,7 +152,7 @@ class TokenManager: ObservableObject {
         
         request.httpBody = try? JSONSerialization.data(withJSONObject: parameters)
         
-        URLSession.shared.dataTask(with: request) { [self] data, response, error in
+        URLSession.shared.dataTask(with: request) { [self] data, _, error in
             if let error = error {
                 // TODO: use completion handler .failure instead)
                 Logger.shared.error("Error fetching access token: \(error)")
@@ -163,8 +163,8 @@ class TokenManager: ObservableObject {
                 if let tokenInfo = self.parseAccessToken(from: data) {
                     DispatchQueue.main.async { [self] in
                         // TODO: use completion handler .success instead)
-                        self.setAccessToken(tokenInfo.access_token)
-                        Logger.shared.debug("Access token: \(tokenInfo.access_token)")
+                        self.setAccessToken(tokenInfo.accessToken)
+                        Logger.shared.debug("Access token: \(tokenInfo.accessToken)")
                         completion(tokenInfo)
                     }
                     return // TODO: what is this here for?
@@ -181,9 +181,9 @@ class TokenManager: ObservableObject {
         if let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
            let accessToken = json["access_token"] as? String,
            let scope = json["scope"] as? String,
-           let token_type = json["token_type"] as? String {
+           let tokenType = json["token_type"] as? String {
             Logger.shared.debug("Successfully parsed accessToken \(accessToken)")
-            return TokenInfo(access_token: accessToken, scope: scope, token_type: token_type)
+            return TokenInfo(accessToken: accessToken, scope: scope, tokenType: tokenType)
         } else {
             Logger.shared.error("Failed to parse access token: \(String(data: data, encoding: .utf8) ?? "")")
             return nil

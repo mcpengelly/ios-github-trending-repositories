@@ -21,7 +21,7 @@ struct RepoStats: View {
             return
         }
         
-        //TODO: debounce, since a user could spam this button to ping network, which could cause undesirable UI
+        // TODO: debounce, since a user could spam this button to ping network, which could cause undesirable UI
         // strictly necessary?
         tokenManager.checkIfRepoStarred(repoOwner: repo.author, repoName: repo.name) { repoStarred in
             DispatchQueue.main.async {
@@ -29,7 +29,10 @@ struct RepoStats: View {
                     Logger.shared.error("Problem occured with checkIsRepoStarred completion handler")
                     return
                 }
-                tokenManager.toggleRepoStar(isRepoStarred: isRepoStarred, repoOwner: repo.author, repoName: repo.name) { newStarStatus in
+                tokenManager.toggleRepoStar(
+                    isRepoStarred: isRepoStarred,
+                    repoOwner: repo.author, repoName: repo.name
+                ) { newStarStatus in
                     if let starStatus = newStarStatus {
                         Logger.shared.debug("Toggling star status to: \(starStatus)")
                         hasStar = starStatus

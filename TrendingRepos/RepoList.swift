@@ -18,13 +18,15 @@ struct RepoList: View {
         tokenManager.accessToken != nil
     }
     
-    
     var body: some View {
+        let url = "https://github.com/login/oauth/authorize?client_id=\(clientId)&redirect_uri=\(callbackUrl)&scope=user%20public_repo"
+        
         VStack {
             // TODO: cleanup by putting this button elsewhere
             // login button only needed until authorized
             if !loggedIn {
-                Link(destination: URL(string: "https://github.com/login/oauth/authorize?client_id=\(clientId)&redirect_uri=\(callbackUrl)&scope=user%20public_repo")!) {
+                Link(
+                    destination: URL(string: url)!) {
                     Text("Login with GitHub")
                         .frame(minWidth: 0, maxWidth: .infinity)
                         .padding()

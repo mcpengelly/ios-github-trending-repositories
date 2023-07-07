@@ -10,21 +10,19 @@ import SwiftUI
 
 struct RepoDetailsView: View {
     let repo: SearchResult
-    private let MAX_LINES_DESCRIPTION = 4
-    private let SINGLE_LINE = 1
 
     var body: some View {
         VStack(alignment: .leading) {
             Text("\(repo.author)/\(repo.name)")
                 .font(.headline)
                 .frame(maxWidth: .infinity, alignment: .leading)
-                .lineLimit(SINGLE_LINE)
+                .lineLimit(Constants.Layout.singleLine)
 
             Text(repo.description)
                 .font(.subheadline)
                 .foregroundColor(.gray)
                 .multilineTextAlignment(.leading)
-                .lineLimit(MAX_LINES_DESCRIPTION)
+                .lineLimit(Constants.Layout.multiLine)
 
             RepoStats(repo: repo)
         }

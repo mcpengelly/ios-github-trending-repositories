@@ -6,7 +6,10 @@ class NetworkManager {
     
     private init() {}
     
-    func fetchTrendingRepos(timeFrame: String = "daily", completion: @escaping (Result<[SearchResult], Error>) -> Void) {
+    func fetchTrendingRepos(
+        timeFrame: String = "daily",
+        completion: @escaping (Result<[SearchResult], Error>
+    ) -> Void) {
         let urlString = "https://api.gitterapp.com/repositories?&since=\(timeFrame)"
         guard let encodedURLString = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
               let url = URL(string: encodedURLString) else { return }
@@ -14,7 +17,7 @@ class NetworkManager {
         var request = URLRequest(url: url)
         request.setValue("application/vnd.github+json", forHTTPHeaderField: "Accept")
         
-        URLSession.shared.dataTask(with: request) { data, response, error in
+        URLSession.shared.dataTask(with: request) { data, _, error in
             if let error = error {
                 Logger.shared.error("error occurred while fetching repos: \(error)")
                 completion(.failure(error))

@@ -10,8 +10,6 @@ import SwiftUI
 
 struct RepoItem: View {
     let repo: SearchResult
-    let MAX_LINES_DESCRIPTION = 4
-    let SINGLE_LINE = 1
     
     var body: some View {
         VStack(alignment: .leading) {

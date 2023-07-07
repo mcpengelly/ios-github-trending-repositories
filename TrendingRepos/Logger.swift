@@ -1,15 +1,15 @@
 import Foundation
 
+// Log Level specificity:
+// Debug: debug, info, warning, error
+// Prod: info, warning, error
+
 enum LogLevel: Int {
     case debug = 1
     case info = 2
     case warning = 3
     case error = 4
 }
-
-// Log Level specificity:
-// Prod: info, warning, error
-// Debug: debug, info, warning, error
 
 class Logger {
     static let shared = Logger()

@@ -10,7 +10,8 @@ import XCTest
 // main things that need to remain functional for the app to be in a good state:
 // starring/unstarring repo
 // checking if a repo is already starred or not - isStarred/notStarred cases
-// ensure we hit the correct endpoint for daily/weekly/monthly - just test that the url is formatted correctly in all 3 cases?
+// ensure we hit the correct endpoint for daily/weekly/monthly
+// - just test that the url is formatted correctly in all 3 cases?
 // github auth login - how do you reliably test this?
 
 final class TrendingReposTests: XCTestCase {

@@ -1,0 +1,18 @@
+disabled_rules:
+  - trailing_whitespace
+  - trailing_newline
+
+opt_in_rules:
+  - empty_count
+  - identifier_name
+  - line_length
+  - unused_optional_binding
+  # Add more rules here as needed
+ 
+line_length:
+  warning: 140
+
+excluded:
+  - Pods
+  # Add more excluded paths here as needed
+

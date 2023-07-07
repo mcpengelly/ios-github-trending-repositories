@@ -12,7 +12,7 @@ struct ContentView: View {
         tokenManager.accessToken != nil
     }
     
-    let LOGIN_STATUSES = [
+    let loginStatuses = [
         true: "person.fill.checkmark",
         false: "person.fill.xmark"
     ]
@@ -49,15 +49,15 @@ struct ContentView: View {
                         }
                         
                         HStack {
-                            Text("Github Login:")
-                            Image(systemName: LOGIN_STATUSES[loggedIn] ?? "person.fill.xmark")
+                            Text("Login with Github:")
+                            Image(systemName: loginStatuses[loggedIn] ?? "person.fill.xmark")
                                 .foregroundColor(loggedIn ? Color.green : Color.red)
                         }
                         .font(.title2)
                         .fontWeight(.bold)
                         .padding(.bottom, 20)
                         
-                        if !isLoading && repos.count > 0 {
+                        if !isLoading && !repos.isEmpty {
                             RepoList(repos: repos)
                         } else {
                             ProgressView()
@@ -74,7 +74,11 @@ struct ContentView: View {
             }
         }
         .alert(isPresented: $isError) {
-            Alert(title: Text("Error"), message: Text("Something went wrong, check back later."), dismissButton: .default(Text("OK")) {
+            Alert(
+                title: Text("Error"),
+                message: Text("Something went wrong, check back later."),
+                dismissButton: .default(Text("OK")
+            ) {
                 isError = false // Reset isError on dismiss
             })
         }

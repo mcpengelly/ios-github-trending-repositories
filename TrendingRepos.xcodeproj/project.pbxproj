@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		912178A12A5880B900B1E203 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912178A02A5880B900B1E203 /* Logger.swift */; };
+		912178A42A589BC800B1E203 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912178A32A589BC800B1E203 /* Constants.swift */; };
 		915DED562A01F1AE00632613 /* TrendingReposApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915DED552A01F1AE00632613 /* TrendingReposApp.swift */; };
 		915DED582A01F1AE00632613 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915DED572A01F1AE00632613 /* ContentView.swift */; };
 		915DED5A2A01F1AF00632613 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 915DED592A01F1AF00632613 /* Assets.xcassets */; };
@@ -23,6 +24,7 @@
 
 /* Begin PBXFileReference section */
 		912178A02A5880B900B1E203 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		912178A32A589BC800B1E203 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		915DED522A01F1AE00632613 /* TrendingRepos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrendingRepos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		915DED552A01F1AE00632613 /* TrendingReposApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingReposApp.swift; sourceTree = "<group>"; };
 		915DED572A01F1AE00632613 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 				91B02F6D2A5480EB00FD1BBC /* KeychainHelper.swift */,
 				91B02F6F2A55C77000FD1BBC /* RepoDetailsView.swift */,
 				912178A02A5880B900B1E203 /* Logger.swift */,
+				912178A32A589BC800B1E203 /* Constants.swift */,
 			);
 			path = TrendingRepos;
 			sourceTree = "<group>";
@@ -103,6 +106,7 @@
 				915DED4E2A01F1AE00632613 /* Sources */,
 				915DED4F2A01F1AE00632613 /* Frameworks */,
 				915DED502A01F1AE00632613 /* Resources */,
+				912178A22A5899D100B1E203 /* Run Script */,
 			);
 			buildRules = (
 			);
@@ -158,12 +162,34 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		912178A22A5899D100B1E203 /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which /opt/homebrew/bin/swiftlint >/dev/null; then\n    /opt/homebrew/bin/swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		915DED4E2A01F1AE00632613 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				915DED642A01F21700632613 /* NetworkManager.swift in Sources */,
+				912178A42A589BC800B1E203 /* Constants.swift in Sources */,
 				91B02DD12A3E165900FD1BBC /* RepoList.swift in Sources */,
 				91B02DCF2A3E163800FD1BBC /* RepoStats.swift in Sources */,
 				915DED582A01F1AE00632613 /* ContentView.swift in Sources */,
