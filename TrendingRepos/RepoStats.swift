@@ -10,6 +10,7 @@ import SwiftUI
 
 struct RepoStats: View {
     @EnvironmentObject var tokenManager: TokenManager
+    @EnvironmentObject var alertManager: AlertManager
     @State var hasStar: Bool = false
     
     let repo: SearchResult
@@ -17,27 +18,33 @@ struct RepoStats: View {
     func toggleStar() {
         guard tokenManager.getAccessToken() != nil else {
             Logger.shared.debug("You must be signed in to star repos")
-            // TODO: better UX, modal or toast popup? how can we trigger the error modal from here?
+            alertManager.handle(error: ErrorTypes.noAuth)
             return
         }
         
         // TODO: debounce, since a user could spam this button to ping network, which could cause undesirable UI
-        // strictly necessary?
-        tokenManager.checkIfRepoStarred(repoOwner: repo.author, repoName: repo.name) { repoStarred in
-            DispatchQueue.main.async {
-                guard let isRepoStarred = repoStarred else {
-                    Logger.shared.error("Problem occured with checkIsRepoStarred completion handler")
-                    return
-                }
-                tokenManager.toggleRepoStar(
-                    isRepoStarred: isRepoStarred,
-                    repoOwner: repo.author, repoName: repo.name
-                ) { newStarStatus in
-                    if let starStatus = newStarStatus {
-                        Logger.shared.debug("Toggling star status to: \(starStatus)")
-                        hasStar = starStatus
+        tokenManager.checkIfRepoStarred(repoOwner: repo.author, repoName: repo.name) { result in
+            switch result {
+            case .success(let repoStarred):
+                DispatchQueue.main.async {
+                    guard let isRepoStarred = repoStarred else {
+                        Logger.shared.error("Problem occured with checkIsRepoStarred completion handler")
+                        return
+                    }
+                    tokenManager.toggleRepoStar(
+                        isRepoStarred: isRepoStarred,
+                        repoOwner: repo.author, repoName: repo.name
+                    ) { newStarStatus in
+                        // use .success and have repoStarred come through?
+                        if let starStatus = newStarStatus {
+                            Logger.shared.debug("Toggling star status to: \(starStatus)")
+                            hasStar = starStatus
+                        }
                     }
                 }
+            case .failure(let error):
+                Logger.shared.error("Unable to toggle star while Logged out")
+                alertManager.handle(error: error)
             }
         }
     }
@@ -77,7 +84,7 @@ struct RepoStats: View {
                 Text(language)
                     .foregroundColor(repo.languageColor.map(Color.init(hex:)) ?? Color.black)
             }
-
+            
         }
         .onReceive(tokenManager.$accessToken) { accessToken in
             if accessToken != nil {
@@ -91,20 +98,26 @@ struct RepoStats: View {
     }
     
     private func checkIfRepoStarred() {
-        tokenManager.checkIfRepoStarred(repoOwner: repo.author, repoName: repo.name) { isStarred in
-            DispatchQueue.main.async {
-                self.hasStar = isStarred ?? false
+        tokenManager.checkIfRepoStarred(repoOwner: repo.author, repoName: repo.name) { result in
+            switch result {
+            case .success(let isStarred):
+                DispatchQueue.main.async {
+                    self.hasStar = isStarred ?? false
+                }
+            case .failure(let error):
+                Logger.shared.error("Error checking if repo starred \(error)")
+                alertManager.handle(error: error)
             }
         }
     }
     
     private func updateStarStatus() {
-         if tokenManager.getAccessToken() != nil {
-             checkIfRepoStarred()
-         } else {
-             self.hasStar = false
-         }
-     }
+        if tokenManager.getAccessToken() != nil {
+            checkIfRepoStarred()
+        } else {
+            self.hasStar = false
+        }
+    }
     
     struct RepoStats_Previews: PreviewProvider {
         static var previews: some View {
@@ -125,6 +138,4 @@ struct RepoStats: View {
             RepoStats(repo: dummyRepo)
         }
     }
-    
 }
-

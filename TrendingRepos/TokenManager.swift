@@ -35,14 +35,13 @@ class TokenManager: ObservableObject {
     }
     
     // TODO: refactor out generic request handler stuff
-    func checkIfRepoStarred(repoOwner: String, repoName: String, completion: @escaping (Bool?) -> Void) {
+    func checkIfRepoStarred(repoOwner: String, repoName: String, completion: @escaping (Result<Bool?, ErrorTypes>) -> Void) {
         guard let token = self.getAccessToken() else {
             Logger.shared.error("token is not availabe, cannot check repo status without auth.")
             return
         }
         
-        let urlString = "https://api.github.com/user/starred/\(repoOwner)/\(repoName)"
-        guard let url = URL(string: urlString) else {
+        guard let url = URL(string: "https://api.github.com/user/starred/\(repoOwner)/\(repoName)") else {
             Logger.shared.debug("Invalid URL")
             return
         }
@@ -55,8 +54,8 @@ class TokenManager: ObservableObject {
         
         URLSession.shared.dataTask(with: request) { _, response, error in
             if let error = error {
-                // TODO: use completion handler .failure instead
                 Logger.shared.error("Failed to check if repository starred. Error: \(error)")
+                completion(.failure(.noData))
                 return
             }
             
@@ -65,14 +64,15 @@ class TokenManager: ObservableObject {
                 if response.statusCode == 204 {
                     Logger.shared.debug("Repository status: starred")
                     // TODO: use completion handler .success with a boolean variable inside?
-                    completion(true)
+                    completion(.success(true))
                 } else {
                     Logger.shared.debug("Repository status: not starred")
                     // TODO: use completion handler .success with a boolean variable inside?
-                    completion(false)
+                    completion(.success(false))
                 }
             } else {
                 Logger.shared.error("No response data")
+                completion(.failure(.noData))
             }
         }.resume()
     }

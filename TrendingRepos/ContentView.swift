@@ -3,6 +3,7 @@ import UIKit
 
 struct ContentView: View {
     @EnvironmentObject var tokenManager: TokenManager
+    @EnvironmentObject var alertManager: AlertManager
     @State private var repos: [SearchResult] = []
     @State private var isLoading: Bool = false
     @State private var selectedTimeFrame: TimeFrame = .daily
@@ -73,13 +74,13 @@ struct ContentView: View {
                 .tag(timeFrame)
             }
         }
-        .alert(isPresented: $isError) {
+        .alert(isPresented: $alertManager.showAlert) {
             Alert(
-                title: Text("Error"),
-                message: Text("Something went wrong, check back later."),
+                title: Text($alertManager.title.wrappedValue),
+                message: Text($alertManager.description.wrappedValue),
                 dismissButton: .default(Text("OK")
             ) {
-                isError = false // Reset isError on dismiss
+                alertManager.resetAlert()
             })
         }
         .onAppear {
@@ -102,7 +103,8 @@ struct ContentView: View {
                 }
             case .failure(let error):
                 Logger.shared.error("\(error)")
-                isError = true
+                alertManager.handle(error: .noData)
+//                isError = true
             }
             isLoading = false
         }

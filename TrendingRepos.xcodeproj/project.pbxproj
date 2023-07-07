@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		912178A12A5880B900B1E203 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912178A02A5880B900B1E203 /* Logger.swift */; };
 		912178A42A589BC800B1E203 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912178A32A589BC800B1E203 /* Constants.swift */; };
+		912178A82A58B7C500B1E203 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912178A72A58B7C500B1E203 /* AlertManager.swift */; };
 		915DED562A01F1AE00632613 /* TrendingReposApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915DED552A01F1AE00632613 /* TrendingReposApp.swift */; };
 		915DED582A01F1AE00632613 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915DED572A01F1AE00632613 /* ContentView.swift */; };
 		915DED5A2A01F1AF00632613 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 915DED592A01F1AF00632613 /* Assets.xcassets */; };
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		912178A02A5880B900B1E203 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		912178A32A589BC800B1E203 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		912178A72A58B7C500B1E203 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		915DED522A01F1AE00632613 /* TrendingRepos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrendingRepos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		915DED552A01F1AE00632613 /* TrendingReposApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingReposApp.swift; sourceTree = "<group>"; };
 		915DED572A01F1AE00632613 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 				91B02F6F2A55C77000FD1BBC /* RepoDetailsView.swift */,
 				912178A02A5880B900B1E203 /* Logger.swift */,
 				912178A32A589BC800B1E203 /* Constants.swift */,
+				912178A72A58B7C500B1E203 /* AlertManager.swift */,
 			);
 			path = TrendingRepos;
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 				91B02F702A55C77000FD1BBC /* RepoDetailsView.swift in Sources */,
 				912178A12A5880B900B1E203 /* Logger.swift in Sources */,
 				91B02F6E2A5480EB00FD1BBC /* KeychainHelper.swift in Sources */,
+				912178A82A58B7C500B1E203 /* AlertManager.swift in Sources */,
 				915DED562A01F1AE00632613 /* TrendingReposApp.swift in Sources */,
 				91B02DD32A3E1A7800FD1BBC /* RepoItem.swift in Sources */,
 				91B02F682A47773700FD1BBC /* TokenManager.swift in Sources */,

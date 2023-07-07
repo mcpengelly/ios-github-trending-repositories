@@ -30,11 +30,13 @@ struct TokenInfo {
 @main
 struct TrendingReposApp: App {
     @StateObject private var tokenManager = TokenManager()
+    @StateObject private var alertManager = AlertManager()
     
     var body: some Scene {
         WindowGroup {
             ContentView()
                 .environmentObject(tokenManager)
+                .environmentObject(alertManager)
                 .onOpenURL { url in
                     if let code = url.queryParameters?["code"] {
                         // TODO: callback hell?
