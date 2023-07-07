@@ -40,11 +40,9 @@ struct TrendingReposApp: App {
                 .environmentObject(tokenManager)
                 .onOpenURL { url in
                     if let code = url.queryParameters?["code"] {
-                        print("Authcode: \(code)")
                         // TODO: callback hell?
                         tokenManager.requestAccessToken(authCode: code) { accessToken in
                             if let token = accessToken?.access_token {
-                                print("Access Token: \(token)")
                                 tokenManager.setAccessToken(token)
                             }
                         }

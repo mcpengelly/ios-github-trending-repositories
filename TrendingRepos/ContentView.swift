@@ -59,9 +59,6 @@ struct ContentView: View {
                         
                         if !isLoading && repos.count > 0 {
                             RepoList(repos: repos)
-                        } else if isError {
-                            Text("Something went wrong, check back later.")
-                            // TODO: modal/toast popup
                         } else {
                             ProgressView()
                                 .scaleEffect(4)
@@ -76,6 +73,11 @@ struct ContentView: View {
                 .tag(timeFrame)
             }
         }
+        .alert(isPresented: $isError) {
+            Alert(title: Text("Error"), message: Text("Something went wrong, check back later."), dismissButton: .default(Text("OK")) {
+                isError = false // Reset isError on dismiss
+            })
+        }
         .onAppear {
             getTrendingRepositories(timeFrame: selectedTimeFrame.rawValue.lowercased())
         }
@@ -86,15 +88,17 @@ struct ContentView: View {
     
     func getTrendingRepositories(timeFrame: String) {
         isLoading = true
+        
         NetworkManager.shared.fetchTrendingRepos(timeFrame: timeFrame) { result in
             switch result {
             case .success(let fetchedRepos):
                 DispatchQueue.main.async {
+                    Logger.shared.debug("Data received: \(repos)")
                     repos = fetchedRepos
                 }
             case .failure(let error):
-                print("Error fetching repos: \(error)")
-                // TODO: modal/toast popup or hasError state?
+                Logger.shared.error("\(error)")
+                isError = true
             }
             isLoading = false
         }

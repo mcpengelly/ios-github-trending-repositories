@@ -16,11 +16,13 @@ class NetworkManager {
         
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let error = error {
+                Logger.shared.error("error occurred while fetching repos: \(error)")
                 completion(.failure(error))
                 return
             }
             
             guard let data = data else {
+                Logger.shared.debug("Failed to fetch trending repos")
                 completion(.failure(NSError(domain: "", code: -1, userInfo: nil)))
                 return
             }
@@ -28,8 +30,10 @@ class NetworkManager {
             do {
                 let decoder = JSONDecoder()
                 let searchResult: [SearchResult] = try decoder.decode([SearchResult].self, from: data)
+                Logger.shared.debug("Fetched trending repos: \(searchResult)")
                 completion(.success(searchResult))
             } catch {
+                Logger.shared.error("error occurred while fetching repos: \(error)")
                 completion(.failure(error))
             }
         }.resume()

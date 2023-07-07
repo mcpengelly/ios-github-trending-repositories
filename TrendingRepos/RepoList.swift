@@ -21,7 +21,7 @@ struct RepoList: View {
     
     var body: some View {
         VStack {
-            // TODO: cleanup?
+            // TODO: cleanup by putting this button elsewhere
             // login button only needed until authorized
             if !loggedIn {
                 Link(destination: URL(string: "https://github.com/login/oauth/authorize?client_id=\(clientId)&redirect_uri=\(callbackUrl)&scope=user%20public_repo")!) {

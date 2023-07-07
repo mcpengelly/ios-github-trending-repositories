@@ -7,25 +7,23 @@
 import Foundation
 
 class TokenManager: ObservableObject {
-    @Published var accessToken: String? = nil
+    @Published var accessToken: String? = nil // Published ensures the UI updates occur for those relying on this
     
     func setAccessToken(_ token: String) {
         DispatchQueue.main.async { [self] in
-            // save token to ios keychain
+            // Save token to ios keychain
+            Logger.shared.debug("Setting Users Github access token in their IOS Keychain")
             if KeychainHelper.set("githubAccessToken", value: token) {
-                // now we ensure the UI triggers an update for token
-                //TODO: might be able to remove now
                 self.accessToken = token
             } else {
-                print("something went wrong in setAccessToken")
+                Logger.shared.error("Something went wrong when setting the Access Token on IOS Keychain")
             }
         }
     }
     
     func getAccessToken() -> String? {
         if let token = KeychainHelper.get("githubAccessToken") {
-           print("getting access token \(token)")
-           return token
+            return token
         }
         return nil
     }
@@ -39,13 +37,13 @@ class TokenManager: ObservableObject {
     //TODO: refactor out generic request handler stuff
     func checkIfRepoStarred(repoOwner: String, repoName: String, completion: @escaping (Bool?) -> Void){
         guard let token = self.getAccessToken() else {
-            print("checkIfRepoStarred, token is nil. Something went wrong")
+            Logger.shared.error("token is not availabe, cannot check repo status without auth.")
             return
         }
         
         let urlString = "https://api.github.com/user/starred/\(repoOwner)/\(repoName)"
         guard let url = URL(string: urlString) else {
-            print("Invalid URL")
+            Logger.shared.debug("Invalid URL")
             return
         }
         
@@ -57,78 +55,87 @@ class TokenManager: ObservableObject {
         
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let error = error {
-                print("Error: \(error)")
+                // TODO: use completion handler .failure instead
+                Logger.shared.error("Failed to check if repository starred. Error: \(error)")
                 return
             }
             
             if let response = response as? HTTPURLResponse {
                 // 404 is the not starred case, 204 is the starred case
                 if response.statusCode == 204 {
-                    print("Repository status: starred.")
-                    // TODO: use completion handler .success instead
+                    Logger.shared.info("Respository status: starred")
+                    // TODO: use completion handler .success with a boolean variable inside?
                     completion(true)
                 } else {
-                    print("Repository status: not starred.")
+                    Logger.shared.info("Respository status: not starred")
+                    // TODO: use completion handler .success with a boolean variable inside?
                     completion(false)
                 }
+            } else {
+                Logger.shared.error("No response data")
             }
         }.resume()
     }
     
     // stars a repo if it hasnt been already, otherwise unstars it
     func toggleRepoStar(isRepoStarred: Bool, repoOwner: String, repoName: String, completion: @escaping (Bool?) -> Void) {
-        if let accessToken = self.getAccessToken() {
-            let urlString = "https://api.github.com/user/starred/\(repoOwner)/\(repoName)"
-            guard let url = URL(string: urlString) else {
-                print("Invalid URL \(urlString), check if the repo exists at github.com/\(repoOwner)/\(repoName)")
+        guard let accessToken = self.getAccessToken() else {
+            Logger.shared.error("accessToken could not be found, cannot star/unstar repo without authentication")
+            return
+        }
+        
+        let urlString = "https://api.github.com/user/starred/\(repoOwner)/\(repoName)"
+        guard let url = URL(string: urlString) else {
+            Logger.shared.debug("Invalid URL \(urlString), check if the repo exists at github.com/\(repoOwner)/\(repoName)")
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = isRepoStarred ? "DELETE" : "PUT"
+        request.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
+        request.setValue("application/vnd.github+json", forHTTPHeaderField: "Accept")
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type") // REQUIRED
+        if !isRepoStarred {
+            request.setValue("0", forHTTPHeaderField: "Content-Length") // recommended in docs for PUT
+        }
+        
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error = error {
+                Logger.shared.error("Error: \(error)")
                 return
             }
             
-            var request = URLRequest(url: url)
-            request.httpMethod = isRepoStarred ? "DELETE" : "PUT"
-            request.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
-            request.setValue("application/vnd.github+json", forHTTPHeaderField: "Accept")
-            request.addValue("application/json", forHTTPHeaderField: "Content-Type") // REQUIRED
-            if !isRepoStarred {
-                request.setValue("0", forHTTPHeaderField: "Content-Length") // recommended in docs for PUT
-            }
-            
-            URLSession.shared.dataTask(with: request) { data, response, error in
-                if let error = error {
-                    print("Error: \(error)")
-                    return
-                }
-                
-                if let response = response as? HTTPURLResponse {
-                    print("toggle star responseCode \(response.statusCode)")
-                    if response.statusCode == 204 {
-                        if isRepoStarred {
-                            print("Repository unstarred successfully.")
-                            completion(false)
-                        } else {
-                            print("Repository starred successfully.")
-                            completion(true)
-                        }
-                    } else {
+            if let response = response as? HTTPURLResponse {
+                // both star and unstar will return 204
+                Logger.shared.debug("Status code: \(response.statusCode)")
+                if response.statusCode == 204 {
+                    if isRepoStarred {
+                        Logger.shared.info("Repo unstarred successfully")
+                        // TODO: use completion handler .success instead
                         completion(false)
-                        print("Failed to toggle repository star.")
+                    } else {
+                        Logger.shared.info("Repo starred successfully")
+                        // TODO: use completion handler .success instead
+                        completion(true)
                     }
+                } else {
+                    completion(false)
+                    // TODO: use completion handler .failure instead
+                    Logger.shared.info("Failed to toggle respository star")
                 }
-            }.resume()
-        } else {
-            print("ToggleRepoStar: Access token is not yet available")
-        }
+            }
+        }.resume()
     }
     
     func requestAccessToken(authCode: String, completion: @escaping (TokenInfo?) -> Void) {
         guard let clientId = ProcessInfo.processInfo.environment["CLIENT_ID"],
               let clientSecret = ProcessInfo.processInfo.environment["CLIENT_SECRET"] else {
-            print("check your environment config, CLIENT_ID or CLIENT_SECRET are missing")
+            Logger.shared.debug("Check your xcode environment config, CLIENT_ID or CLIENT_SECRET are missing")
             return
         }
         
         guard let url = URL(string: "https://github.com/login/oauth/access_token") else {
-            print("Invalid URL")
+            Logger.shared.debug("Invalid accessToken URL")
             return
         }
         
@@ -147,19 +154,23 @@ class TokenManager: ObservableObject {
         
         URLSession.shared.dataTask(with: request) { [self] data, response, error in
             if let error = error {
-                print("Error: \(error)")
+                // TODO: use completion handler .failure instead)
+                Logger.shared.error("Error fetching access token: \(error)")
                 return
             }
             
             if let data = data {
                 if let tokenInfo = self.parseAccessToken(from: data) {
                     DispatchQueue.main.async { [self] in
+                        // TODO: use completion handler .success instead)
                         self.setAccessToken(tokenInfo.access_token)
+                        Logger.shared.debug("Access token: \(tokenInfo.access_token)")
                         completion(tokenInfo)
                     }
-                    return
+                    return // TODO: what is this here for?
                 } else {
-                    print("Failed to parse access token", data)
+                    // TODO: use completion handler .failure instead)
+                    Logger.shared.error("access token could not be parsed from data: \(data)")
                     completion(nil)
                 }
             }
@@ -171,9 +182,10 @@ class TokenManager: ObservableObject {
            let accessToken = json["access_token"] as? String,
            let scope = json["scope"] as? String,
            let token_type = json["token_type"] as? String {
+            Logger.shared.debug("Successfully parsed accessToken \(accessToken)")
             return TokenInfo(access_token: accessToken, scope: scope, token_type: token_type)
         } else {
-            print("Failed to parse access token:", String(data: data, encoding: .utf8) ?? "")
+            Logger.shared.error("Failed to parse access token: \(String(data: data, encoding: .utf8) ?? "")")
             return nil
         }
     }

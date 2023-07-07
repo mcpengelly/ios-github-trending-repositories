@@ -16,21 +16,22 @@ struct RepoStats: View {
     
     func toggleStar() {
         guard tokenManager.getAccessToken() != nil else {
-            // TODO: better UX, modal or toast popup?
-            print("You must be signed in to star repos")
+            Logger.shared.debug("You must be signed in to star repos")
+            // TODO: better UX, modal or toast popup? how can we trigger the error modal from here?
             return
         }
         
         //TODO: debounce, since a user could spam this button to ping network, which could cause undesirable UI
+        // strictly necessary?
         tokenManager.checkIfRepoStarred(repoOwner: repo.author, repoName: repo.name) { repoStarred in
             DispatchQueue.main.async {
                 guard let isRepoStarred = repoStarred else {
-                    print("issues with isRepoStarred")
+                    Logger.shared.error("Problem occured with checkIsRepoStarred completion handler")
                     return
                 }
                 tokenManager.toggleRepoStar(isRepoStarred: isRepoStarred, repoOwner: repo.author, repoName: repo.name) { newStarStatus in
                     if let starStatus = newStarStatus {
-                        print("toggling frontend with \(starStatus)")
+                        Logger.shared.debug("Toggling star status to: \(starStatus)")
                         hasStar = starStatus
                     }
                 }
