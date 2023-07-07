@@ -61,7 +61,7 @@ struct RepoStats: View {
                 Image(systemName: "chart.line.uptrend.xyaxis")
                 Text("\(repo.currentPeriodStars)")
             }
-            .frame(width: 70)
+            .frame(width: 75)
             .foregroundColor(Color.green)
             
             Divider()
@@ -81,7 +81,7 @@ struct RepoStats: View {
             }
         }
         .padding(2)
-        .font(.system(size: 18))
+        .font(.system(size: 16))
         .foregroundColor(.gray)
         .lineLimit(1)
     }
