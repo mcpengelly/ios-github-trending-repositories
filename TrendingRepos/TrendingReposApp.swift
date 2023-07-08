@@ -9,8 +9,8 @@
 // access token:
 // - double check to make sure access_token isnt logged, or in local memory unnecessarily
 // - launch details
-    // - check contractual agreement, am i allowed to release free shit?
-    // - register ror apple developer program 99$ USD, and they may not even accept my app lmao.
+    // - check contractual agreement, am i allowed to release free shit? if yes proceed
+    // - register for apple developer program 99$ USD. any way to know if theyll accept it before paying?
     // - test on device
     // - testflight?
     // - app assets: icon, title, description, keywords, demo video
@@ -28,6 +28,7 @@
 // - TokenManager does too much, exclude the parts that have to do with GithubAPI
 // - dark mode
 // - use result wherever applicable
+// - address all TODOS
 
 import SwiftUI
 

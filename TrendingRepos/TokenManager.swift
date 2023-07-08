@@ -19,11 +19,11 @@ struct TokenData: Decodable {
 }
 
 class TokenManager: ObservableObject {
-    @Published var accessToken: String? // Published ensures the UI updates occur for those relying on this
+    @Published var accessToken: String?
     
     func setAccessToken(_ token: String, shouldPersist: Bool = true) {
         DispatchQueue.main.async { [self] in
-            // Persists to keychain if requested (also updates the ui), if not itll just update the UI
+            // Persists to keychain if desired (also updates the ui), if not will just update the UI
             if shouldPersist {
                 // Save token to ios keychain
                 if KeychainHelper.set("githubAccessToken", value: token) {
