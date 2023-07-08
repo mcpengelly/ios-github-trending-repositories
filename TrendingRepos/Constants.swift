@@ -13,7 +13,7 @@ struct Constants {
         static let singleLine = 1
     }
     
-    struct Network {
-        static let baseUrl = "https://github.com/login/oauth"
-    }
+//    struct Network {
+//        static let baseUrl = "https://github.com/login/oauth"
+//    }
 }

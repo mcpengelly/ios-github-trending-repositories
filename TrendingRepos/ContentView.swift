@@ -4,6 +4,7 @@ import UIKit
 struct ContentView: View {
     @EnvironmentObject var tokenManager: TokenManager
     @EnvironmentObject var alertManager: AlertManager
+    @ObservedObject var viewModel: TrendingReposViewModel
     @State private var repos: [SearchResult] = []
     @State private var isLoading: Bool = false
     @State private var selectedTimeFrame: TimeFrame = .daily
@@ -17,24 +18,6 @@ struct ContentView: View {
         true: "person.fill.checkmark",
         false: "person.fill.xmark"
     ]
-    
-    enum TimeFrame: String, CaseIterable {
-        case daily = "Daily"
-        case weekly = "Weekly"
-        case monthly = "Monthly"
-        
-        func previous() -> TimeFrame {
-            guard let index = TimeFrame.allCases.firstIndex(of: self) else { return self }
-            let newIndex = index == 0 ? TimeFrame.allCases.count - 1 : index - 1
-            return TimeFrame.allCases[newIndex]
-        }
-        
-        func next() -> TimeFrame {
-            guard let index = TimeFrame.allCases.firstIndex(of: self) else { return self }
-            let newIndex = (index + 1) % TimeFrame.allCases.count
-            return TimeFrame.allCases[newIndex]
-        }
-    }
     
     var body: some View {
         // TODO: MVVM, THIS FILE IS WAY TOO COMPLICATED FOR A CONTENTVIEW
@@ -64,6 +47,7 @@ struct ContentView: View {
                             ProgressView()
                                 .scaleEffect(4)
                                 .frame(maxWidth: .infinity, maxHeight: .infinity)
+                                .padding(100)
                         }
                     }
                     .padding()
@@ -104,50 +88,19 @@ struct ContentView: View {
             case .failure(let error):
                 Logger.shared.error("\(error)")
                 alertManager.handle(error: .noData)
-//                isError = true
             }
             isLoading = false
         }
     }
 }
-
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        let mockTokenManager = TokenManager()
+        let mockAlertManager = AlertManager()
+        let mockViewModel = TrendingReposViewModel(tokenManager: mockTokenManager, alertManager: mockAlertManager)
+        
+        ContentView(viewModel: mockViewModel)
+            .environmentObject(mockTokenManager)
+            .environmentObject(mockAlertManager)
     }
 }
-
-// easily create a Color from a hex value
-extension Color {
-    init?(hex: String) {
-        let formattedHex = hex.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
-        var rgbValue: UInt64 = 0
-        
-        guard Scanner(string: formattedHex).scanHexInt64(&rgbValue),
-              formattedHex.count == 6 else {
-            return nil
-        }
-        
-        let red = Double((rgbValue & 0xFF0000) >> 16) / 255.0
-        let green = Double((rgbValue & 0x00FF00) >> 8) / 255.0
-        let blue = Double(rgbValue & 0x0000FF) / 255.0
-        
-        self.init(UIColor(red: red, green: green, blue: blue, alpha: 1.0))
-    }
-}
-
-// TODO: determine whether this is simply a wrapper class or a useful abstraction
-extension URL {
-    var queryParameters: [String: String]? {
-        guard let components = URLComponents(url: self, resolvingAgainstBaseURL: true),
-              let queryItems = components.queryItems else {
-            return nil
-        }
-        
-        var parameters = [String: String]()
-        queryItems.forEach { parameters[$0.name] = $0.value }
-        
-        return parameters
-    }
-}
-

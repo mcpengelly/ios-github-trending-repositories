@@ -10,6 +10,10 @@
 		912178A12A5880B900B1E203 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912178A02A5880B900B1E203 /* Logger.swift */; };
 		912178A42A589BC800B1E203 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912178A32A589BC800B1E203 /* Constants.swift */; };
 		912178A82A58B7C500B1E203 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912178A72A58B7C500B1E203 /* AlertManager.swift */; };
+		912178AC2A59AD9900B1E203 /* TrendingReposViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912178AB2A59AD9900B1E203 /* TrendingReposViewModel.swift */; };
+		914F8C8B2A59BAE700FF5147 /* TimeFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914F8C8A2A59BAE700FF5147 /* TimeFrame.swift */; };
+		914F8C8D2A59BB1B00FF5147 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914F8C8C2A59BB1B00FF5147 /* Color+Extensions.swift */; };
+		914F8C8F2A59BB2B00FF5147 /* URL+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914F8C8E2A59BB2B00FF5147 /* URL+Extensions.swift */; };
 		915DED562A01F1AE00632613 /* TrendingReposApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915DED552A01F1AE00632613 /* TrendingReposApp.swift */; };
 		915DED582A01F1AE00632613 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 915DED572A01F1AE00632613 /* ContentView.swift */; };
 		915DED5A2A01F1AF00632613 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 915DED592A01F1AF00632613 /* Assets.xcassets */; };
@@ -27,6 +31,10 @@
 		912178A02A5880B900B1E203 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		912178A32A589BC800B1E203 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		912178A72A58B7C500B1E203 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
+		912178AB2A59AD9900B1E203 /* TrendingReposViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingReposViewModel.swift; sourceTree = "<group>"; };
+		914F8C8A2A59BAE700FF5147 /* TimeFrame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFrame.swift; sourceTree = "<group>"; };
+		914F8C8C2A59BB1B00FF5147 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
+		914F8C8E2A59BB2B00FF5147 /* URL+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extensions.swift"; sourceTree = "<group>"; };
 		915DED522A01F1AE00632613 /* TrendingRepos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrendingRepos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		915DED552A01F1AE00632613 /* TrendingReposApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingReposApp.swift; sourceTree = "<group>"; };
 		915DED572A01F1AE00632613 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,6 +61,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		914F8C892A59BACD00FF5147 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				914F8C8A2A59BAE700FF5147 /* TimeFrame.swift */,
+				914F8C8C2A59BB1B00FF5147 /* Color+Extensions.swift */,
+				914F8C8E2A59BB2B00FF5147 /* URL+Extensions.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		915DED492A01F1AE00632613 = {
 			isa = PBXGroup;
 			children = (
@@ -72,6 +90,7 @@
 		915DED542A01F1AE00632613 /* TrendingRepos */ = {
 			isa = PBXGroup;
 			children = (
+				914F8C892A59BACD00FF5147 /* Utils */,
 				91B02F672A47773700FD1BBC /* TokenManager.swift */,
 				91B02DD22A3E1A7800FD1BBC /* RepoItem.swift */,
 				91B02DD02A3E165900FD1BBC /* RepoList.swift */,
@@ -87,6 +106,7 @@
 				912178A02A5880B900B1E203 /* Logger.swift */,
 				912178A32A589BC800B1E203 /* Constants.swift */,
 				912178A72A58B7C500B1E203 /* AlertManager.swift */,
+				912178AB2A59AD9900B1E203 /* TrendingReposViewModel.swift */,
 			);
 			path = TrendingRepos;
 			sourceTree = "<group>";
@@ -192,8 +212,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				915DED642A01F21700632613 /* NetworkManager.swift in Sources */,
+				912178AC2A59AD9900B1E203 /* TrendingReposViewModel.swift in Sources */,
+				914F8C8B2A59BAE700FF5147 /* TimeFrame.swift in Sources */,
 				912178A42A589BC800B1E203 /* Constants.swift in Sources */,
 				91B02DD12A3E165900FD1BBC /* RepoList.swift in Sources */,
+				914F8C8D2A59BB1B00FF5147 /* Color+Extensions.swift in Sources */,
 				91B02DCF2A3E163800FD1BBC /* RepoStats.swift in Sources */,
 				915DED582A01F1AE00632613 /* ContentView.swift in Sources */,
 				91B02F702A55C77000FD1BBC /* RepoDetailsView.swift in Sources */,
@@ -201,6 +224,7 @@
 				91B02F6E2A5480EB00FD1BBC /* KeychainHelper.swift in Sources */,
 				912178A82A58B7C500B1E203 /* AlertManager.swift in Sources */,
 				915DED562A01F1AE00632613 /* TrendingReposApp.swift in Sources */,
+				914F8C8F2A59BB2B00FF5147 /* URL+Extensions.swift in Sources */,
 				91B02DD32A3E1A7800FD1BBC /* RepoItem.swift in Sources */,
 				91B02F682A47773700FD1BBC /* TokenManager.swift in Sources */,
 			);
