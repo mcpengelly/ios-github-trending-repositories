@@ -97,6 +97,8 @@ struct RepoStats: View {
         .onReceive(tokenManager.$accessToken) { accessToken in
             if accessToken != nil {
                 checkIfRepoStarred()
+            } else {
+                self.hasStar = false // if nil, user has just logged out
             }
         }
         .padding(2)

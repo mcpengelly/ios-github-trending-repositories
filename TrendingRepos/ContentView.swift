@@ -35,6 +35,18 @@ struct ContentView: View {
                             Text("Login with Github:")
                             Image(systemName: loginStatuses[loggedIn] ?? "person.fill.xmark")
                                 .foregroundColor(loggedIn ? Color.green : Color.red)
+                            if loggedIn {
+                                Spacer()
+                                Button("Logout") {
+                                    tokenManager.clearAccessToken()
+                                }
+                                .frame(width: 55, height: 10)
+                                .padding()
+                                .background(Color.red)
+                                .foregroundColor(Color.white)
+                                .cornerRadius(10)
+                                .font(.subheadline)
+                            }
                         }
                         .font(.title2)
                         .fontWeight(.bold)
@@ -61,12 +73,17 @@ struct ContentView: View {
             Alert(
                 title: Text($alertManager.title.wrappedValue),
                 message: Text($alertManager.description.wrappedValue),
-                dismissButton: .default(Text("OK")
-            ) {
-                alertManager.resetAlert()
-            })
+                dismissButton: .default(
+                   Text("OK")) {
+                       alertManager.resetAlert()
+                   }
+            )
         }
         .onAppear {
+            if let token = tokenManager.getAccessToken() {
+                tokenManager.setAccessToken(token, shouldPersist: false)
+            }
+            
             getTrendingRepositories(timeFrame: selectedTimeFrame.rawValue.lowercased())
         }
         .onChange(of: selectedTimeFrame) { newValue in

@@ -7,14 +7,22 @@
 
 // demo target:
 // access token:
-// - do not set the accessToken when switching between pages
-// - do not set the accessToken in storage if it was just pulled from storage
-// - double check to make sure access_token isnt unsecurely stored for any reason, for example to update ui
-
-// - unit testing the most important parts: in progress
+// - double check to make sure access_token isnt logged, or in local memory unnecessarily
 // - launch details
+    // - check contractual agreement, am i allowed to release free shit?
+    // - register ror apple developer program 99$ USD, and they may not even accept my app lmao.
+    // - test on device
+    // - testflight?
+    // - app assets: icon, title, description, keywords, demo video
+    // - list used APIS: unofficial github trending, official github Oauth & star/unstar repositories
+    // - see app store review guidelines
+    // - expect review to take time
+    // - upload an archived app file to app store fonnect
+    // - release automatically or manually (you choose)
+// **** double check the app is still working as expected after everything ****
 
 // demo 2 target:
+// - unit testing the most important parts: in progress
 // - convert to futures instead of callbacks
 // - introduce abstractions over ThreadQueue.main.dataTask in NetworkManager?
 // - TokenManager does too much, exclude the parts that have to do with GithubAPI
@@ -22,12 +30,6 @@
 // - use result wherever applicable
 
 import SwiftUI
-
-struct TokenInfo {
-    var accessToken: String
-    var scope: String
-    var tokenType: String
-}
 
 @main
 struct TrendingReposApp: App {
@@ -42,7 +44,7 @@ struct TrendingReposApp: App {
                 .environmentObject(alertManager)
                 .onOpenURL { url in
                     if let code = url.queryParameters?["code"] {
-                        // TODO: callback hell?
+                        // TODO: callback hell? use futures?
                         tokenManager.requestAccessToken(authCode: code) { accessToken in
                             if let token = accessToken?.accessToken {
                                 tokenManager.setAccessToken(token)

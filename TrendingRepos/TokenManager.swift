@@ -6,17 +6,33 @@
 //
 import Foundation
 
+struct TokenData: Decodable {
+    var accessToken: String
+    var scope: String
+    var tokenType: String
+    
+    private enum CodingKeys: String, CodingKey {
+        case accessToken = "access_token"
+        case scope
+        case tokenType = "token_type"
+    }
+}
+
 class TokenManager: ObservableObject {
     @Published var accessToken: String? // Published ensures the UI updates occur for those relying on this
     
-    func setAccessToken(_ token: String) {
+    func setAccessToken(_ token: String, shouldPersist: Bool = true) {
         DispatchQueue.main.async { [self] in
-            // Save token to ios keychain
-            Logger.shared.debug("Setting Users Github access token in their IOS Keychain")
-            if KeychainHelper.set("githubAccessToken", value: token) {
-                self.accessToken = token
+            // Persists to keychain if requested (also updates the ui), if not itll just update the UI
+            if shouldPersist {
+                // Save token to ios keychain
+                if KeychainHelper.set("githubAccessToken", value: token) {
+                    self.accessToken = token
+                } else {
+                    Logger.shared.error("Something went wrong when setting the Access Token on IOS Keychain")
+                }
             } else {
-                Logger.shared.error("Something went wrong when setting the Access Token on IOS Keychain")
+                self.accessToken = token
             }
         }
     }
@@ -31,10 +47,15 @@ class TokenManager: ObservableObject {
     func clearAccessToken() {
         DispatchQueue.main.async { [self] in
             self.accessToken = nil
+            if KeychainHelper.delete("githubAccessToken") {
+                Logger.shared.debug("Successfully deleted githubAccessToken from IOS Keychain")
+            } else {
+                Logger.shared.debug("Unable to clear githubAccessToken from IOS Keychain")
+            }
         }
     }
     
-    func requestAccessToken(authCode: String, completion: @escaping (TokenInfo?) -> Void) {
+    func requestAccessToken(authCode: String, completion: @escaping (TokenData?) -> Void) {
         guard let clientId = ProcessInfo.processInfo.environment["CLIENT_ID"],
               let clientSecret = ProcessInfo.processInfo.environment["CLIENT_SECRET"] else {
             Logger.shared.debug("Check your xcode environment config, CLIENT_ID or CLIENT_SECRET are missing")
@@ -74,7 +95,6 @@ class TokenManager: ObservableObject {
                         Logger.shared.debug("Access token: \(tokenInfo.accessToken)")
                         completion(tokenInfo)
                     }
-                    return // TODO: what is this here for?
                 } else {
                     // TODO: use completion handler .failure instead)
                     Logger.shared.error("access token could not be parsed from data: \(data)")
@@ -84,14 +104,13 @@ class TokenManager: ObservableObject {
         }.resume()
     }
     
-    func parseAccessToken(from data: Data) -> TokenInfo? {
-        if let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
-           let accessToken = json["access_token"] as? String,
-           let scope = json["scope"] as? String,
-           let tokenType = json["token_type"] as? String {
-            Logger.shared.debug("Successfully parsed accessToken \(accessToken)")
-            return TokenInfo(accessToken: accessToken, scope: scope, tokenType: tokenType)
-        } else {
+    func parseAccessToken(from data: Data) -> TokenData? {
+        let decoder = JSONDecoder()
+        do {
+            let tokenData = try decoder.decode(TokenData.self, from: data)
+            Logger.shared.debug("Successfully parsed accessToken \(tokenData)")
+            return tokenData
+        } catch {
             Logger.shared.error("Failed to parse access token: \(String(data: data, encoding: .utf8) ?? "")")
             return nil
         }

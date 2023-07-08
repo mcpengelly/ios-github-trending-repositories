@@ -22,8 +22,6 @@ struct RepoList: View {
         let url = "https://github.com/login/oauth/authorize?client_id=\(clientId)&redirect_uri=\(callbackUrl)&scope=user%20public_repo"
         
         VStack {
-            // TODO: cleanup by putting this button elsewhere
-            // login button only needed until authorized
             if !loggedIn {
                 Link(
                     destination: URL(string: url)!) {
@@ -39,14 +37,6 @@ struct RepoList: View {
             
             ForEach(repos) { repo in
                 RepoItem(repo: repo)
-            }
-        }
-        .onAppear {
-            // check keychain for existing token, if one exists, then consider the retrigger UI updates
-            // TODO: this might be a bit of a hack right now to get the UI to rerender.
-            // ideally on launch, the tokenManager should check 
-            if let token = tokenManager.getAccessToken() {
-                tokenManager.setAccessToken(token)
             }
         }
     }
