@@ -20,7 +20,6 @@ struct ContentView: View {
     ]
     
     var body: some View {
-        // TODO: MVVM, THIS FILE IS WAY TOO COMPLICATED FOR A CONTENTVIEW
         TabView(selection: $selectedTimeFrame) {
             ForEach(TimeFrame.allCases, id: \.self) { timeFrame in
                 ScrollView {
@@ -95,6 +94,7 @@ struct ContentView: View {
 }
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
+        // TODO: replace with actual mocks?
         let mockTokenManager = TokenManager()
         let mockAlertManager = AlertManager()
         let mockViewModel = TrendingReposViewModel(tokenManager: mockTokenManager, alertManager: mockAlertManager)

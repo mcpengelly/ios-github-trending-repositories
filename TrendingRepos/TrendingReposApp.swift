@@ -6,17 +6,20 @@
 //
 
 // demo target:
+// access token:
+// - do not set the accessToken when switching between pages
 // - do not set the accessToken in storage if it was just pulled from storage
 // - double check to make sure access_token isnt unsecurely stored for any reason, for example to update ui
+
 // - unit testing the most important parts: in progress
 // - launch details
 
 // demo 2 target:
-// - ContentView does too much, use MVVM pattern
 // - convert to futures instead of callbacks
 // - introduce abstractions over ThreadQueue.main.dataTask in NetworkManager?
 // - TokenManager does too much, exclude the parts that have to do with GithubAPI
 // - dark mode
+// - use result wherever applicable
 
 import SwiftUI
 

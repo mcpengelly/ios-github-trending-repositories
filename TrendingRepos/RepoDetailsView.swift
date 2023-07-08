@@ -9,6 +9,9 @@ import Foundation
 import SwiftUI
 
 struct RepoDetailsView: View {
+    @EnvironmentObject var tokenManager: TokenManager
+    @EnvironmentObject var alertManager: AlertManager
+    
     let repo: SearchResult
 
     var body: some View {
@@ -24,7 +27,7 @@ struct RepoDetailsView: View {
                 .multilineTextAlignment(.leading)
                 .lineLimit(Constants.Layout.multiLine)
 
-            RepoStats(repo: repo)
+            RepoStats(repo: repo, tokenManager: tokenManager, alertManager: alertManager)
         }
         .padding(10)
         .background(RoundedRectangle(cornerRadius: 5)

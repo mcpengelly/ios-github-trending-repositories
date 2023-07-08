@@ -9,11 +9,19 @@ import Foundation
 import SwiftUI
 
 struct RepoStats: View {
-    @EnvironmentObject var tokenManager: TokenManager
-    @EnvironmentObject var alertManager: AlertManager
     @State var hasStar: Bool = false
     
-    let repo: SearchResult
+    var tokenManager: TokenManager
+    var alertManager: AlertManager
+    var repo: SearchResult
+    var githubAPI: GithubAPI
+    
+    init(repo: SearchResult, tokenManager: TokenManager, alertManager: AlertManager) {
+        self.tokenManager = tokenManager
+        self.alertManager = alertManager
+        self.repo = repo
+        self.githubAPI = GithubAPI(tokenManager: self.tokenManager)
+    }
     
     func toggleStar() {
         guard tokenManager.getAccessToken() != nil else {
@@ -23,7 +31,7 @@ struct RepoStats: View {
         }
         
         // TODO: debounce, since a user could spam this button to ping network, which could cause undesirable UI
-        tokenManager.checkIfRepoStarred(repoOwner: repo.author, repoName: repo.name) { result in
+        githubAPI.checkIfRepoStarred(repoOwner: repo.author, repoName: repo.name) { result in
             switch result {
             case .success(let repoStarred):
                 DispatchQueue.main.async {
@@ -31,7 +39,7 @@ struct RepoStats: View {
                         Logger.shared.error("Problem occured with checkIsRepoStarred completion handler")
                         return
                     }
-                    tokenManager.toggleRepoStar(
+                    githubAPI.toggleRepoStar(
                         isRepoStarred: isRepoStarred,
                         repoOwner: repo.author, repoName: repo.name
                     ) { newStarStatus in
@@ -98,7 +106,7 @@ struct RepoStats: View {
     }
     
     private func checkIfRepoStarred() {
-        tokenManager.checkIfRepoStarred(repoOwner: repo.author, repoName: repo.name) { result in
+        githubAPI.checkIfRepoStarred(repoOwner: repo.author, repoName: repo.name) { result in
             switch result {
             case .success(let isStarred):
                 DispatchQueue.main.async {
@@ -135,7 +143,16 @@ struct RepoStats: View {
                 builtBy: [Contributor(username: "test123", href: "https://github.com", avatar: "ok")]
             )
             
-            RepoStats(repo: dummyRepo)
+            // TODO: replace with actual mocks?
+            let mockTokenManager = TokenManager()
+            let mockAlertManager = AlertManager()
+            let mockViewModel = TrendingReposViewModel(tokenManager: mockTokenManager, alertManager: mockAlertManager)
+            
+            ContentView(viewModel: mockViewModel)
+                .environmentObject(mockTokenManager)
+                .environmentObject(mockAlertManager)
+            
+            RepoStats(repo: dummyRepo, tokenManager: mockTokenManager, alertManager: mockAlertManager)
         }
     }
 }
