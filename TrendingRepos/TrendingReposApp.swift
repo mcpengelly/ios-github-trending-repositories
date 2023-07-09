@@ -37,7 +37,7 @@
 // - use result wherever applicable
 // - address all TODOS
 // - accessibility
-// - 
+// - localization/internationalization
 
 import SwiftUI
 

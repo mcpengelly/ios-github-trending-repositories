@@ -51,11 +51,6 @@
       </BuildableProductRunnable>
       <EnvironmentVariables>
          <EnvironmentVariable
-            key = "DARK_MODE_ENABLED"
-            value = "0"
-            isEnabled = "YES">
-         </EnvironmentVariable>
-         <EnvironmentVariable
             key = "CLIENT_SECRET"
             value = "e720b69f078991970d47f65bfc915c3ac3b1ba94"
             isEnabled = "YES">
