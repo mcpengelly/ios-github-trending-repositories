@@ -11,16 +11,18 @@ import SwiftUI
 struct RepoStats: View {
     @State var hasStar: Bool = false
     
+    var darkModeManager: DarkModeManager
     var tokenManager: TokenManager
     var alertManager: AlertManager
     var repo: SearchResult
     var githubAPI: GithubAPI
     
-    init(repo: SearchResult, tokenManager: TokenManager, alertManager: AlertManager) {
+    init(repo: SearchResult, tokenManager: TokenManager, alertManager: AlertManager, darkModeManager: DarkModeManager) {
         self.tokenManager = tokenManager
         self.alertManager = alertManager
         self.repo = repo
         self.githubAPI = GithubAPI(tokenManager: self.tokenManager)
+        self.darkModeManager = darkModeManager
     }
     
     func toggleStar() {
@@ -97,8 +99,8 @@ struct RepoStats: View {
         .onReceive(tokenManager.$accessToken) { accessToken in
             if accessToken != nil {
                 checkIfRepoStarred()
-            } else {
-                self.hasStar = false // if nil, user has just logged out
+            } else { // if nil, user has just logged out
+                self.hasStar = false
             }
         }
         .padding(2)
@@ -148,13 +150,14 @@ struct RepoStats: View {
             // TODO: replace with actual mocks?
             let mockTokenManager = TokenManager()
             let mockAlertManager = AlertManager()
+            let darkModeManager = DarkModeManager()
             let mockViewModel = TrendingReposViewModel(tokenManager: mockTokenManager, alertManager: mockAlertManager)
             
-            ContentView(viewModel: mockViewModel)
+            ContentView(viewModel: mockViewModel, darkModeManager: darkModeManager)
                 .environmentObject(mockTokenManager)
                 .environmentObject(mockAlertManager)
             
-            RepoStats(repo: dummyRepo, tokenManager: mockTokenManager, alertManager: mockAlertManager)
+            RepoStats(repo: dummyRepo, tokenManager: mockTokenManager, alertManager: mockAlertManager, darkModeManager: darkModeManager)
         }
     }
 }

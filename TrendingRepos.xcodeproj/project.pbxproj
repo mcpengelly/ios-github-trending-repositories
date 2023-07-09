@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		91048CA02A5AEE18006CD876 /* DarkModeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91048C9F2A5AEE18006CD876 /* DarkModeManager.swift */; };
 		912178A12A5880B900B1E203 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912178A02A5880B900B1E203 /* Logger.swift */; };
 		912178A42A589BC800B1E203 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912178A32A589BC800B1E203 /* Constants.swift */; };
 		912178A82A58B7C500B1E203 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912178A72A58B7C500B1E203 /* AlertManager.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		91048C9F2A5AEE18006CD876 /* DarkModeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeManager.swift; sourceTree = "<group>"; };
 		912178A02A5880B900B1E203 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		912178A32A589BC800B1E203 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		912178A72A58B7C500B1E203 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				914F8C892A59BACD00FF5147 /* Utils */,
 				91B02F672A47773700FD1BBC /* TokenManager.swift */,
 				91B02DD22A3E1A7800FD1BBC /* RepoItem.swift */,
+				91048C9F2A5AEE18006CD876 /* DarkModeManager.swift */,
 				91B02DD02A3E165900FD1BBC /* RepoList.swift */,
 				91AFE9302A11A2CD0033B388 /* Info.plist */,
 				915DED632A01F21700632613 /* NetworkManager.swift */,
@@ -216,6 +219,7 @@
 			files = (
 				915DED642A01F21700632613 /* NetworkManager.swift in Sources */,
 				912178AC2A59AD9900B1E203 /* TrendingReposViewModel.swift in Sources */,
+				91048CA02A5AEE18006CD876 /* DarkModeManager.swift in Sources */,
 				914F8C8B2A59BAE700FF5147 /* TimeFrame.swift in Sources */,
 				912178A42A589BC800B1E203 /* Constants.swift in Sources */,
 				91B02DD12A3E165900FD1BBC /* RepoList.swift in Sources */,

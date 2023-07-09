@@ -5,6 +5,8 @@ struct ContentView: View {
     @EnvironmentObject var tokenManager: TokenManager
     @EnvironmentObject var alertManager: AlertManager
     @ObservedObject var viewModel: TrendingReposViewModel
+    @ObservedObject var darkModeManager: DarkModeManager
+    
     @State private var repos: [SearchResult] = []
     @State private var isLoading: Bool = false
     @State private var selectedTimeFrame: TimeFrame = .daily
@@ -20,18 +22,20 @@ struct ContentView: View {
     ]
     
     var body: some View {
+        let toggleDarkMode = Button(action: {
+            darkModeManager.toggleDarkMode()
+        }, label: {
+            Image(systemName: darkModeManager.darkModeEnabled ? "sun.max.fill" : "moon.fill")
+                .foregroundColor(.gray)
+        })
+        
         TabView(selection: $selectedTimeFrame) {
             ForEach(TimeFrame.allCases, id: \.self) { timeFrame in
                 ScrollView {
                     VStack(alignment: .leading) {
+
                         HStack {
-                            Text("Trending Repositories: \(timeFrame.rawValue)")
-                                .font(.largeTitle)
-                                .fontWeight(.bold)
-                                .padding(.bottom, 20)
-                        }
-                        
-                        HStack {
+                            toggleDarkMode
                             Text("Login with Github:")
                             Image(systemName: loginStatuses[loggedIn] ?? "person.fill.xmark")
                                 .foregroundColor(loggedIn ? Color.green : Color.red)
@@ -51,6 +55,15 @@ struct ContentView: View {
                         .font(.title2)
                         .fontWeight(.bold)
                         .padding(.bottom, 20)
+                        .foregroundColor(darkModeManager.darkModeEnabled ? .white : .black)
+                        
+                        HStack {
+                            Text("Trending Repositories: \(timeFrame.rawValue)")
+                                .font(.largeTitle)
+                                .fontWeight(.bold)
+                                .padding(.bottom, 20)
+                                .foregroundColor(darkModeManager.darkModeEnabled ? .white : .black)
+                        }
                         
                         if !isLoading && !repos.isEmpty {
                             RepoList(repos: repos)
@@ -63,6 +76,7 @@ struct ContentView: View {
                     }
                     .padding()
                 }
+                .background(darkModeManager.darkModeEnabled ? .black : .white)
                 .tabItem {
                     Text(timeFrame.rawValue)
                 }
@@ -111,12 +125,14 @@ struct ContentView: View {
 }
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
+        @ObservedObject var darkModeManager = DarkModeManager()
+        
         // TODO: replace with actual mocks?
         let mockTokenManager = TokenManager()
         let mockAlertManager = AlertManager()
         let mockViewModel = TrendingReposViewModel(tokenManager: mockTokenManager, alertManager: mockAlertManager)
         
-        ContentView(viewModel: mockViewModel)
+        ContentView(viewModel: mockViewModel, darkModeManager: darkModeManager)
             .environmentObject(mockTokenManager)
             .environmentObject(mockAlertManager)
     }

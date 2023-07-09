@@ -56,3 +56,16 @@ struct KeychainHelper {
         return status == errSecSuccess
     }
 }
+
+extension KeychainHelper {
+    static func setBool(_ key: String, value: Bool) -> Bool {
+        return set(key, value: String(value))
+    }
+
+    static func getBool(_ key: String) -> Bool? {
+        if let stringValue = get(key) {
+            return Bool(stringValue)
+        }
+        return nil
+    }
+}

@@ -49,6 +49,23 @@
             ReferencedContainer = "container:TrendingRepos.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <EnvironmentVariables>
+         <EnvironmentVariable
+            key = "DARK_MODE_ENABLED"
+            value = "0"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+         <EnvironmentVariable
+            key = "CLIENT_SECRET"
+            value = "e720b69f078991970d47f65bfc915c3ac3b1ba94"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+         <EnvironmentVariable
+            key = "CLIENT_ID"
+            value = "6a9c97c831c4bab998d2"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+      </EnvironmentVariables>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
