@@ -33,7 +33,8 @@ struct RepoDetailsView: View {
         .padding(10)
         .background(
             RoundedRectangle(cornerRadius: 5)
-                .fill(darkModeManager.darkModeEnabled ? Color(.systemBackground) : Color(.white)).border(.gray)
+            .fill(darkModeManager.darkModeEnabled ? Color(.black) : Color(.white))
+            .border(Color(.gray))
         )
     }
 }

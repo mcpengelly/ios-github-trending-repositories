@@ -56,8 +56,8 @@ class TokenManager: ObservableObject {
     }
     
     func requestAccessToken(authCode: String, completion: @escaping (TokenData?) -> Void) {
-        guard let clientId = ProcessInfo.processInfo.environment["CLIENT_ID"],
-              let clientSecret = ProcessInfo.processInfo.environment["CLIENT_SECRET"] else {
+        guard let clientId = valueForSecretKey(named: "CLIENT_ID"),
+              let clientSecret = valueForSecretKey(named: "CLIENT_SECRET") else {
             Logger.shared.debug("Check your xcode environment config, CLIENT_ID or CLIENT_SECRET are missing")
             return
         }
@@ -77,6 +77,7 @@ class TokenManager: ObservableObject {
             "client_secret": clientSecret,
             "code": authCode
         ]
+        print("parameters", parameters)
         
         request.httpBody = try? JSONSerialization.data(withJSONObject: parameters)
         

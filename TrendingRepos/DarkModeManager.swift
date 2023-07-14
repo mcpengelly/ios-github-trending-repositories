@@ -8,6 +8,7 @@
 import Foundation
 import UIKit // TODO: bad idea to mix in UIKit in with an app thats 99% swiftUI?
 
+// TODO: UserDefaults instead
 class DarkModeManager: ObservableObject {
     @Published var darkModeEnabled: Bool
     

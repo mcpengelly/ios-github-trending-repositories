@@ -22,6 +22,8 @@ struct ContentView: View {
     ]
     
     var body: some View {
+        LanguageSelectionView()
+        
         let toggleDarkMode = Button(action: {
             darkModeManager.toggleDarkMode()
         }, label: {
@@ -29,20 +31,23 @@ struct ContentView: View {
                 .foregroundColor(.gray)
         })
         
+        
         TabView(selection: $selectedTimeFrame) {
             ForEach(TimeFrame.allCases, id: \.self) { timeFrame in
                 ScrollView {
                     VStack(alignment: .leading) {
-
+                        let pageTitle = NSLocalizedString("title_timeframe", comment: "title with timeframe argument")
+                        let localizedPageTitle = String(format: pageTitle, NSLocalizedString(timeFrame.rawValue, comment: "time frame"))
+                        
                         HStack {
                             toggleDarkMode
-                            Text("Login with Github:")
+                            Text(NSLocalizedString("login_with_github", comment: "github oauth button"))
                             Image(systemName: loginStatuses[loggedIn] ?? "person.fill.xmark")
                                 .foregroundColor(loggedIn ? Color.green : Color.red)
                             if loggedIn {
                                 Spacer()
-                                Button("Logout") {
-                                    tokenManager.clearAccessToken()
+                                Button(NSLocalizedString("logout", comment: "oauth logout")) {
+                                   tokenManager.clearAccessToken()
                                 }
                                 .frame(width: 55, height: 10)
                                 .padding()
@@ -58,7 +63,7 @@ struct ContentView: View {
                         .foregroundColor(darkModeManager.darkModeEnabled ? .white : .black)
                         
                         HStack {
-                            Text("Trending Repositories: \(timeFrame.rawValue)")
+                            Text(localizedPageTitle)
                                 .font(.largeTitle)
                                 .fontWeight(.bold)
                                 .padding(.bottom, 20)
@@ -78,7 +83,7 @@ struct ContentView: View {
                 }
                 .background(darkModeManager.darkModeEnabled ? .black : .white)
                 .tabItem {
-                    Text(timeFrame.rawValue)
+                    Text(NSLocalizedString(timeFrame.rawValue, comment: "Tabs"))
                 }
                 .tag(timeFrame)
             }
@@ -88,7 +93,7 @@ struct ContentView: View {
                 title: Text($alertManager.title.wrappedValue),
                 message: Text($alertManager.description.wrappedValue),
                 dismissButton: .default(
-                   Text("OK")) {
+                   Text(NSLocalizedString("ok", comment: "ok button"))) {
                        alertManager.resetAlert()
                    }
             )

@@ -6,27 +6,34 @@
 //
 
 // demo target:
-// access token:
-// - double check to make sure access_token isnt logged, or in local memory unnecessarily
+// - accessibility for most important parts (will apple allow a launch without accessibility?)
+// - localization/internationalization for the entire app
+// - language change should automatically propogate changes to UI
+// - language picker should adopt the UserDefault if there is one, otherwise use their ios current ios setting
+// - move dark mode enabled to UserDefaults
+// - language filter - api allows this, just needs wiring
+// - sort response data by most starred in timeframe
 // - launch details
-    // - test on physical device
-    // - check contractual agreement, am i allowed to release free shit? pending discussion with work
-    // - register for apple developer program 99$ USD. any way to know if theyll accept it before paying?
+    // - register for apple developer program 99$ USD. any way to know if theyll accept it before paying? use 2015
+    // https://developer.apple.com/programs/enroll/
     // - see app store review guidelines
     // - testflight?
     // - app assets:
-        // title: trending github repos (ios)
-        // description: Follow the latest daily, weekly & monthly trending code repositories straight from the source!
-        // keywords: github, trending, code, respository, latest, popular
-        // demo: check slack for vid
+        // title: Trending Github Projects (ios)
+        // description: Keep up to date with the latest daily, weekly & monthly trending code repositories straight from the source!
+        // keywords: github, trending, code, respository, latest, popular, discovery, tools
+        // demo: check slack for vid - refilm demo after latest features
         // Web APIs used:
-        // 1. unofficial github trending repositories
+        // 1. unofficial github trending repositories: https://github.com/alisoft/github-trending-api
         // 2. official github OAuth, star/unstar repositories on behalf of the user & checking users star status
-        // Native APIs: IOS Keychain: githubAccessToken & darkModeEnabled
-    // - expect apple review to take 48 hours
+        // Native APIs:
+            // IOS Keychain
+                // fields: githubAccessToken & darkModeEnabled
+        // Secrets.plist, to fork/work on the repo you need this setup.
+            // CLIENT_ID and CLIENT_SECRET
+    // - expect apple review to take 3 business days
     // - upload an archived app file to app store connect - how to generate archived app when time comes?
     // - release automatically or manually (you choose)
-// **** double check the app is still working as expected after everything ****
 
 // demo 2 target:
 // - buy me a coffee button
@@ -36,8 +43,6 @@
 // - TokenManager does too much, exclude the parts that have to do with GithubAPI
 // - use result wherever applicable
 // - address all TODOS
-// - accessibility
-// - localization/internationalization
 
 import SwiftUI
 

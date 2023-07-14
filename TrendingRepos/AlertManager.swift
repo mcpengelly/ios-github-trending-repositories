@@ -22,12 +22,12 @@ class AlertManager: ObservableObject {
     func handle(error: ErrorTypes) {
         switch error {
         case .noData:
-            self.title = "No data found."
-            self.description = "Unable to fetch trending github data"
+            self.title = NSLocalizedString("no_data_found", comment: "No data Modal")
+            self.description = NSLocalizedString("unable_to_fetch_data", comment: "Unable to fetch Data Modal")
             self.showAlert = true
         case .noAuth:
-            self.title = "Not authenticated with Github."
-            self.description = "You must Login with Github to star Repositories from the app"
+            self.title = NSLocalizedString("not_authenticated", comment: "Not authenticated")
+            self.description = NSLocalizedString("login_to_star_repos", comment: "User must be logged in to star")
             self.showAlert = true
         }
     }

@@ -10,7 +10,7 @@ class NetworkManager {
         timeFrame: String = "daily",
         completion: @escaping (Result<[SearchResult], Error>
     ) -> Void) {
-        let urlString = "https://api.gitterapp.com/repositories?&since=\(timeFrame)"
+        let urlString = "https://api.gitterapp.com/repositories?&since=\(timeFrame)" // TODO: allow language filter
         guard let encodedURLString = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
               let url = URL(string: encodedURLString) else { return }
         

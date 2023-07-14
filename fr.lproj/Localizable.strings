@@ -1,0 +1,21 @@
+/*
+  Localizable.strings
+  TrendingRepos
+
+  Created by Matt Pengelly on 2023-07-14.
+  
+*/
+
+"daily" = "Quotidien";
+"weekly" = "Hebdomadaire";
+"monthly" = "Mensuel";
+"login_with_github" = "Connexion avec Github";
+"login_to_star_repos" = "Vous devez vous connecter avec Github pour mettre en favoris les dépôts depuis l'application";
+"not_authenticated" = "Non authentifié avec Github";
+"unable_to_fetch_data" = "Impossible de récupérer les données tendances de Github";
+"no_data_found" = "Aucune donnée trouvée";
+"logout" = "Déconnexion";
+"ok" = "Ok";
+"language" = "Langue";
+"title_timeframe" = "Dépôts tendances : %@";
+

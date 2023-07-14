@@ -6,9 +6,10 @@
 //
 
 enum TimeFrame: String, CaseIterable {
-    case daily = "Daily"
-    case weekly = "Weekly"
-    case monthly = "Monthly"
+    // use keys here instead and on View map them to values
+    case daily = "daily"
+    case weekly = "weekly"
+    case monthly = "monthly"
     
     func previous() -> TimeFrame {
         guard let index = TimeFrame.allCases.firstIndex(of: self) else { return self }

@@ -12,7 +12,7 @@ struct RepoList: View {
     @EnvironmentObject var tokenManager: TokenManager
     
     let repos: [SearchResult]
-    let clientId = ProcessInfo.processInfo.environment["CLIENT_ID"] ?? ""
+    let clientId = valueForSecretKey(named: "CLIENT_ID") ?? ""
     let callbackUrl = "ios-github-trending://callback"
     var loggedIn: Bool {
         tokenManager.accessToken != nil
@@ -25,7 +25,7 @@ struct RepoList: View {
             if !loggedIn {
                 Link(
                     destination: URL(string: url)!) {
-                    Text("Login with GitHub")
+                    Text(NSLocalizedString("login_with_github", comment: "github oauth button"))
                         .frame(minWidth: 0, maxWidth: .infinity)
                         .padding()
                         .foregroundColor(.white)

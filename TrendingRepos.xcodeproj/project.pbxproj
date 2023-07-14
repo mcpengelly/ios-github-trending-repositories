@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		91048CA02A5AEE18006CD876 /* DarkModeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91048C9F2A5AEE18006CD876 /* DarkModeManager.swift */; };
+		9110DE332A61B127007B007E /* Secrets.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9110DE322A61B127007B007E /* Secrets.plist */; };
+		9110DE352A61B214007B007E /* SecretHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9110DE342A61B214007B007E /* SecretHelper.swift */; };
+		9110DE3E2A61C673007B007E /* LocalizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9110DE3D2A61C673007B007E /* LocalizationManager.swift */; };
+		9110DE402A61C861007B007E /* LanguageSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9110DE3F2A61C861007B007E /* LanguageSelectionView.swift */; };
+		9110DE412A61CE04007B007E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9110DE432A61CE04007B007E /* Localizable.strings */; };
 		912178A12A5880B900B1E203 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912178A02A5880B900B1E203 /* Logger.swift */; };
 		912178A42A589BC800B1E203 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912178A32A589BC800B1E203 /* Constants.swift */; };
 		912178A82A58B7C500B1E203 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912178A72A58B7C500B1E203 /* AlertManager.swift */; };
@@ -31,6 +36,16 @@
 
 /* Begin PBXFileReference section */
 		91048C9F2A5AEE18006CD876 /* DarkModeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeManager.swift; sourceTree = "<group>"; };
+		9110DE322A61B127007B007E /* Secrets.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Secrets.plist; sourceTree = "<group>"; };
+		9110DE342A61B214007B007E /* SecretHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretHelper.swift; sourceTree = "<group>"; };
+		9110DE3D2A61C673007B007E /* LocalizationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationManager.swift; sourceTree = "<group>"; };
+		9110DE3F2A61C861007B007E /* LanguageSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSelectionView.swift; sourceTree = "<group>"; };
+		9110DE422A61CE04007B007E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9110DE442A61CE06007B007E /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9110DE452A61CE06007B007E /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9110DE462A61CE07007B007E /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
+		9110DE472A61CE08007B007E /* pt-PT */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-PT"; path = "pt-PT.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		9110DE482A61CE09007B007E /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		912178A02A5880B900B1E203 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		912178A32A589BC800B1E203 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		912178A72A58B7C500B1E203 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
@@ -71,6 +86,7 @@
 				914F8C8A2A59BAE700FF5147 /* TimeFrame.swift */,
 				914F8C8C2A59BB1B00FF5147 /* Color+Extensions.swift */,
 				914F8C8E2A59BB2B00FF5147 /* URL+Extensions.swift */,
+				9110DE342A61B214007B007E /* SecretHelper.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -78,6 +94,7 @@
 		915DED492A01F1AE00632613 = {
 			isa = PBXGroup;
 			children = (
+				9110DE432A61CE04007B007E /* Localizable.strings */,
 				915DED542A01F1AE00632613 /* TrendingRepos */,
 				915DED532A01F1AE00632613 /* Products */,
 			);
@@ -94,17 +111,16 @@
 		915DED542A01F1AE00632613 /* TrendingRepos */ = {
 			isa = PBXGroup;
 			children = (
+				915DED5B2A01F1AF00632613 /* Preview Content */,
 				914F8C892A59BACD00FF5147 /* Utils */,
 				91B02F672A47773700FD1BBC /* TokenManager.swift */,
+				9110DE3F2A61C861007B007E /* LanguageSelectionView.swift */,
 				91B02DD22A3E1A7800FD1BBC /* RepoItem.swift */,
 				91048C9F2A5AEE18006CD876 /* DarkModeManager.swift */,
 				91B02DD02A3E165900FD1BBC /* RepoList.swift */,
-				91AFE9302A11A2CD0033B388 /* Info.plist */,
 				915DED632A01F21700632613 /* NetworkManager.swift */,
 				915DED552A01F1AE00632613 /* TrendingReposApp.swift */,
 				915DED572A01F1AE00632613 /* ContentView.swift */,
-				915DED592A01F1AF00632613 /* Assets.xcassets */,
-				915DED5B2A01F1AF00632613 /* Preview Content */,
 				91B02DCE2A3E163800FD1BBC /* RepoStats.swift */,
 				91B02F6D2A5480EB00FD1BBC /* KeychainHelper.swift */,
 				91B02F6F2A55C77000FD1BBC /* RepoDetailsView.swift */,
@@ -113,6 +129,10 @@
 				912178A72A58B7C500B1E203 /* AlertManager.swift */,
 				912178AB2A59AD9900B1E203 /* TrendingReposViewModel.swift */,
 				914F8C902A59BF5D00FF5147 /* GithubAPI.swift */,
+				9110DE3D2A61C673007B007E /* LocalizationManager.swift */,
+				91AFE9302A11A2CD0033B388 /* Info.plist */,
+				9110DE322A61B127007B007E /* Secrets.plist */,
+				915DED592A01F1AF00632613 /* Assets.xcassets */,
 			);
 			path = TrendingRepos;
 			sourceTree = "<group>";
@@ -168,6 +188,11 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
+				it,
+				"pt-PT",
+				es,
+				de,
 			);
 			mainGroup = 915DED492A01F1AE00632613;
 			productRefGroup = 915DED532A01F1AE00632613 /* Products */;
@@ -185,6 +210,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				915DED5D2A01F1AF00632613 /* Preview Assets.xcassets in Resources */,
+				9110DE412A61CE04007B007E /* Localizable.strings in Resources */,
+				9110DE332A61B127007B007E /* Secrets.plist in Resources */,
 				915DED5A2A01F1AF00632613 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -217,10 +244,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9110DE3E2A61C673007B007E /* LocalizationManager.swift in Sources */,
 				915DED642A01F21700632613 /* NetworkManager.swift in Sources */,
 				912178AC2A59AD9900B1E203 /* TrendingReposViewModel.swift in Sources */,
+				9110DE352A61B214007B007E /* SecretHelper.swift in Sources */,
 				91048CA02A5AEE18006CD876 /* DarkModeManager.swift in Sources */,
 				914F8C8B2A59BAE700FF5147 /* TimeFrame.swift in Sources */,
+				9110DE402A61C861007B007E /* LanguageSelectionView.swift in Sources */,
 				912178A42A589BC800B1E203 /* Constants.swift in Sources */,
 				91B02DD12A3E165900FD1BBC /* RepoList.swift in Sources */,
 				914F8C8D2A59BB1B00FF5147 /* Color+Extensions.swift in Sources */,
@@ -239,6 +269,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		9110DE432A61CE04007B007E /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9110DE422A61CE04007B007E /* en */,
+				9110DE442A61CE06007B007E /* fr */,
+				9110DE452A61CE06007B007E /* de */,
+				9110DE462A61CE07007B007E /* it */,
+				9110DE472A61CE08007B007E /* pt-PT */,
+				9110DE482A61CE09007B007E /* es */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		915DED5E2A01F1AF00632613 /* Debug */ = {
@@ -291,7 +337,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -345,7 +391,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
