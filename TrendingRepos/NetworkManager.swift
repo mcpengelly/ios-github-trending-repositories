@@ -8,9 +8,15 @@ class NetworkManager {
     
     func fetchTrendingRepos(
         timeFrame: String = "daily",
+        language: String? = nil,
         completion: @escaping (Result<[SearchResult], Error>
     ) -> Void) {
-        let urlString = "https://api.gitterapp.com/repositories?&since=\(timeFrame)" // TODO: allow language filter
+        var urlString = ""
+        if let languageFilter = language {
+            urlString = "https://api.gitterapp.com/repositories?&language=\(languageFilter)&since=\(timeFrame)"
+        } else {
+            urlString = "https://api.gitterapp.com/repositories?&since=\(timeFrame)"
+        }
         guard let encodedURLString = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed),
               let url = URL(string: encodedURLString) else { return }
         

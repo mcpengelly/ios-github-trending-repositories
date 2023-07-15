@@ -7,13 +7,9 @@
 
 // demo target:
 // - filter on programming language if one specified, otherwise all. always default back to all on launch.
-// - accessibility for most important parts (will apple allow a launch without accessibility?)
-// - bottom nav shouldnt rerender on navigate?
-// - language selector should ideally not cover the notch area...
-// - move dark mode enabled to UserDefaults
-// - language filter - api allows this, just needs wiring
-// - nav bar hides when reaching the bottom
 // - sort response data by most starred in timeframe
+// - accessibility for most important parts (will apple allow a launch without accessibility?)
+// - nav bar hides when reaching the bottom - couldnt fix when i tried
 // - launch details
     // - register for apple developer program 99$ USD. any way to know if theyll accept it before paying? use 2015
     // https://developer.apple.com/programs/enroll/
