@@ -33,7 +33,8 @@ class TrendingReposViewModel: ObservableObject {
             case .success(let fetchedRepos):
                 DispatchQueue.main.async { [self] in
                     Logger.shared.debug("Data received: \(repos)")
-                    self.repos = fetchedRepos
+                    let sortedRepos = fetchedRepos.sorted { $0.currentPeriodStars > $1.currentPeriodStars }
+                    self.repos = sortedRepos
                 }
             case .failure(let error):
                 Logger.shared.error("\(error)")

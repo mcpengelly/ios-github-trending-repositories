@@ -35,7 +35,7 @@ struct RepoList: View {
                     .padding()
             }
             
-            ForEach(repos) { repo in
+            ForEach(repos, id: \.id) { repo in
                 RepoItem(repo: repo)
             }
         }

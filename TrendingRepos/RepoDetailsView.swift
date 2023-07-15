@@ -30,6 +30,7 @@ struct RepoDetailsView: View {
             
             RepoStats(repo: repo, tokenManager: tokenManager, alertManager: alertManager, darkModeManager: darkModeManager)
         }
+        .accessibilityLabel("\(repo.author)/\(repo.name), \(repo.description)")
         .padding(10)
         .background(
             RoundedRectangle(cornerRadius: 5) 

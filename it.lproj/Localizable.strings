@@ -18,5 +18,8 @@
 "ok" = "Ok";
 "language" = "Lingua";
 "title_timeframe" = "Repository in tendenza: %@";
+"toggle_dark_mode" = "Attiva modalità scura";
+"toggled_dark_mode" = "Modalità scura attivata";
+"repo_accessibility_label" = "Totale stelle: %@, numero di stelle dal periodo: %@, totale fork: %@, linguaggio di programmazione utilizzato: %@";
 
 

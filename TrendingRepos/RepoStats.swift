@@ -70,6 +70,18 @@ struct RepoStats: View {
                 .font(.system(size: 23))
         }
         
+//        let accessibilityLabel =
+//        "Total Stars: \(String(repo.stars)), " +
+//            "number of stars since period: \(repo.currentPeriodStars), " +
+//            "total forks: \(repo.forks), coding language used: \(repo.language ?? "Unknown")"
+//
+        let accessibilityLabel = String(format: NSLocalizedString("repo_accessibility_label", comment: ""),
+            String(repo.stars),
+            String(repo.currentPeriodStars),
+            String(repo.forks),
+            repo.language ?? NSLocalizedString("unknown_language", comment: "")
+        )
+        
         HStack {
             if hasStar {
                 filledStarButton
@@ -94,8 +106,8 @@ struct RepoStats: View {
                 Text(language)
                     .foregroundColor(repo.languageColor.map(Color.init(hex:)) ?? Color.black)
             }
-            
         }
+        .accessibilityLabel(accessibilityLabel)
         .onReceive(tokenManager.$accessToken) { accessToken in
             if accessToken != nil {
                 checkIfRepoStarred()

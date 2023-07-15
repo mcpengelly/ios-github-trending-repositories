@@ -7,10 +7,7 @@ struct ContentView: View {
     @ObservedObject var viewModel: TrendingReposViewModel
     @ObservedObject var darkModeManager: DarkModeManager
     
-    @State private var repos: [SearchResult] = []
-    @State private var isLoading: Bool = false
     @State private var selectedTimeFrame: TimeFrame = .daily
-    @State var isError = false
     
     var loggedIn: Bool {
         tokenManager.accessToken != nil
@@ -24,10 +21,14 @@ struct ContentView: View {
     var body: some View {
         let toggleDarkMode = Button(action: {
             darkModeManager.toggleDarkMode()
+            UIAccessibility.post(
+                notification: .announcement,
+                argument: NSLocalizedString("toggled_dark_mode", comment: "After toggle announcement")
+            )
         }, label: {
             Image(systemName: darkModeManager.darkModeEnabled ? "sun.max.fill" : "moon.fill")
                 .foregroundColor(.gray)
-        })
+        }).accessibilityLabel(NSLocalizedString("toggle_dark_mode", comment: "Dark mode Button"))
         
         TabView(selection: $selectedTimeFrame) {
             ForEach(TimeFrame.allCases, id: \.self) { timeFrame in
@@ -67,8 +68,8 @@ struct ContentView: View {
                                 .foregroundColor(darkModeManager.darkModeEnabled ? .white : .black)
                         }
                         
-                        if !isLoading && !repos.isEmpty {
-                            RepoList(repos: repos)
+                        if !viewModel.isLoading && !viewModel.repos.isEmpty {
+                            RepoList(repos: viewModel.repos)
                         } else {
                             ProgressView()
                                 .scaleEffect(4)
@@ -103,31 +104,14 @@ struct ContentView: View {
                 tokenManager.setAccessToken(token, shouldPersist: false)
             }
             
-            getTrendingRepositories(timeFrame: selectedTimeFrame.rawValue.lowercased())
+            viewModel.getTrendingRepositories(timeFrame: selectedTimeFrame.rawValue.lowercased())
         }
         .onChange(of: selectedTimeFrame) { newValue in
-            getTrendingRepositories(timeFrame: newValue.rawValue.lowercased())
-        }
-    }
-    
-    func getTrendingRepositories(timeFrame: String) {
-        isLoading = true
-        
-        NetworkManager.shared.fetchTrendingRepos(timeFrame: timeFrame) { result in
-            switch result {
-            case .success(let fetchedRepos):
-                DispatchQueue.main.async {
-                    Logger.shared.debug("Data received: \(repos)")
-                    repos = fetchedRepos
-                }
-            case .failure(let error):
-                Logger.shared.error("\(error)")
-                alertManager.handle(error: .noData)
-            }
-            isLoading = false
+            viewModel.getTrendingRepositories(timeFrame: newValue.rawValue.lowercased())
         }
     }
 }
+
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         @ObservedObject var darkModeManager = DarkModeManager()

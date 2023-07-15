@@ -6,12 +6,11 @@
 //
 
 // demo target:
-// - filter on programming language if one specified, otherwise all. always default back to all on launch.
-// - sort response data by most starred in timeframe
-// - accessibility for most important parts (will apple allow a launch without accessibility?)
-// - nav bar hides when reaching the bottom - couldnt fix when i tried
+// - verify accessibility with physical device
+// - final pass physical device test:
+    // all tabs, all translations, accessibility mode on/off, dark mode persisting state, loggout and loggedin states
 // - launch details
-    // - register for apple developer program 99$ USD. any way to know if theyll accept it before paying? use 2015
+    // - register for apple developer program 99$ USD
     // https://developer.apple.com/programs/enroll/
     // - see app store review guidelines
     // - testflight?
@@ -36,10 +35,12 @@
 // - buy me a coffee button
 // - unit testing the most important parts: in progress
 // - convert to futures instead of callbacks
+// - filter on programming language if one specified, otherwise all. always default back to all on launch.
 // - introduce abstractions over ThreadQueue.main.dataTask in NetworkManager?
 // - TokenManager does too much, exclude the parts that have to do with GithubAPI
 // - use result wherever applicable
 // - address all TODOS
+// - nav bar hides when reaching the bottom - couldnt fix when i tried
 
 import SwiftUI
 

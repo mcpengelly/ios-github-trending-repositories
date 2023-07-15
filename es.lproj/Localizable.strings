@@ -18,3 +18,6 @@
 "ok" = "Aceptar";
 "language" = "Idioma";
 "title_timeframe" = "Repositorios populares: %@";
+"toggle_dark_mode" = "Alternar modo oscuro";
+"toggled_dark_mode" = "Modo oscuro activado";
+"repo_accessibility_label" = "Total de Estrellas: %@, número de estrellas desde el período: %@, forks totales: %@, lenguaje de programación utilizado: %@";

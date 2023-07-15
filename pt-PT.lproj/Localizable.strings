@@ -18,5 +18,8 @@
 "ok" = "Ok";
 "language" = "Idioma";
 "title_timeframe" = "Repositórios em Tendência: %@";
+"toggle_dark_mode" = "Alternar Modo Escuro";
+"toggled_dark_mode" = "Modo Escuro Alternado";
+"repo_accessibility_label" = "Total de Estrelas: %@, número de estrelas desde o período: %@, forks totais: %@, linguagem de programação utilizada: %@";
 
 

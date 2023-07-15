@@ -18,4 +18,7 @@
 "ok" = "Ok";
 "language" = "Sprache";
 "title_timeframe" = "Trendige Repositories: %@";
+"toggle_dark_mode" = "Dunklen Modus umschalten";
+"toggled_dark_mode" = "Dunkler Modus umgeschaltet";
+"repo_accessibility_label" = "Gesamtsterne: %@, Anzahl der Sterne seit dem Zeitraum: %@, Gesamt-Forks: %@, verwendete Programmiersprache: %@";
 

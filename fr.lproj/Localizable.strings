@@ -18,4 +18,7 @@
 "ok" = "Ok";
 "language" = "Langue";
 "title_timeframe" = "Dépôts tendances : %@";
+"toggle_dark_mode" = "Activer le mode sombre";
+"toggled_dark_mode" = "Mode sombre activé";
+"repo_accessibility_label" = "Total des étoiles : %@, nombre d'étoiles depuis la période : %@, forks totaux : %@, langage de programmation utilisé : %@";
 

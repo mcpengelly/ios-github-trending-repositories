@@ -8,7 +8,7 @@ class NetworkManager {
     
     func fetchTrendingRepos(
         timeFrame: String = "daily",
-        language: String? = nil,
+        language: String? = nil, // TODO: language https://api.gitterapp.com/languages
         completion: @escaping (Result<[SearchResult], Error>
     ) -> Void) {
         var urlString = ""
