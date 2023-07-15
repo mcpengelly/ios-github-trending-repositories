@@ -3,4 +3,166 @@
    uuid = "E123AD7E-A0BC-45CA-B4E4-4F9B842CFAA1"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6C94DD36-0070-4EA4-984E-E1BCA639DA94"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TrendingRepos/LocalizationManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "initialize()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EA082E1D-DCB5-4BE2-80ED-B49DC381B479"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TrendingRepos/LocalizationManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "setLanguage(_:)"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  uuid = "EA082E1D-DCB5-4BE2-80ED-B49DC381B479 - 23da5449f8f37d68"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TrendingRepos.LocalizationManager.setLanguage(Swift.String) -&gt; ()"
+                  moduleName = "TrendingRepos"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mpengelly/Documents/workspace/swift/TrendingRepos/TrendingRepos/LocalizationManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "60"
+                  endingLineNumber = "60"
+                  offsetFromSymbolStart = "2012">
+               </Location>
+               <Location
+                  uuid = "EA082E1D-DCB5-4BE2-80ED-B49DC381B479 - 23da5449f8f37f83"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TrendingRepos.LocalizationManager.setLanguage(Swift.String) -&gt; ()"
+                  moduleName = "TrendingRepos"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mpengelly/Documents/workspace/swift/TrendingRepos/TrendingRepos/LocalizationManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "69"
+                  endingLineNumber = "69"
+                  offsetFromSymbolStart = "1316">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "137891EA-51CF-4350-9770-C7506A27E456"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TrendingRepos/LocalizationManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "initialize()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F9B62B33-FEB5-4C90-9BB0-080DEC22E9EB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TrendingRepos/LocalizationManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "initialize()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9D4EC405-C923-42F3-A976-0E5B494B262C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TrendingRepos/LocalizationManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "getCurrentLanguage()"
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  uuid = "9D4EC405-C923-42F3-A976-0E5B494B262C - 9076149797a38661"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TrendingRepos.LocalizationManager.getCurrentLanguage() -&gt; Swift.String"
+                  moduleName = "TrendingRepos"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mpengelly/Documents/workspace/swift/TrendingRepos/TrendingRepos/LocalizationManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "1660">
+               </Location>
+               <Location
+                  uuid = "9D4EC405-C923-42F3-A976-0E5B494B262C - 9076149797a38661"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TrendingRepos.LocalizationManager.getCurrentLanguage() -&gt; Swift.String"
+                  moduleName = "TrendingRepos"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mpengelly/Documents/workspace/swift/TrendingRepos/TrendingRepos/LocalizationManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "696">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "94F0357F-901E-4DE8-99D6-0BEFD56E3DC1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TrendingRepos/LanguageSelectionView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "handleLanguageSelection(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

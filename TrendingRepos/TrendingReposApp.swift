@@ -6,12 +6,13 @@
 //
 
 // demo target:
+// - filter on programming language if one specified, otherwise all. always default back to all on launch.
 // - accessibility for most important parts (will apple allow a launch without accessibility?)
-// - localization/internationalization for the entire app
-// - language change should automatically propogate changes to UI
-// - language picker should adopt the UserDefault if there is one, otherwise use their ios current ios setting
+// - bottom nav shouldnt rerender on navigate?
+// - language selector should ideally not cover the notch area...
 // - move dark mode enabled to UserDefaults
 // - language filter - api allows this, just needs wiring
+// - nav bar hides when reaching the bottom
 // - sort response data by most starred in timeframe
 // - launch details
     // - register for apple developer program 99$ USD. any way to know if theyll accept it before paying? use 2015

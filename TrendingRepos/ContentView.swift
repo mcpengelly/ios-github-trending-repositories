@@ -22,15 +22,12 @@ struct ContentView: View {
     ]
     
     var body: some View {
-        LanguageSelectionView()
-        
         let toggleDarkMode = Button(action: {
             darkModeManager.toggleDarkMode()
         }, label: {
             Image(systemName: darkModeManager.darkModeEnabled ? "sun.max.fill" : "moon.fill")
                 .foregroundColor(.gray)
         })
-        
         
         TabView(selection: $selectedTimeFrame) {
             ForEach(TimeFrame.allCases, id: \.self) { timeFrame in
@@ -76,6 +73,9 @@ struct ContentView: View {
                             ProgressView()
                                 .scaleEffect(4)
                                 .frame(maxWidth: .infinity, maxHeight: .infinity)
+                                .progressViewStyle(
+                                    CircularProgressViewStyle(tint: darkModeManager.darkModeEnabled ?  Color.white : Color.black)
+                                )
                                 .padding(100)
                         }
                     }
