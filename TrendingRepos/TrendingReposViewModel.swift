@@ -20,27 +20,30 @@ class TrendingReposViewModel: ObservableObject {
         self.tokenManager = tokenManager
         self.alertManager = alertManager
     }
-
+    
     var loggedIn: Bool {
         tokenManager.accessToken != nil
     }
-
+    
     func getTrendingRepositories(timeFrame: String) {
         isLoading = true
-
+        
         NetworkManager.shared.fetchTrendingRepos(timeFrame: timeFrame) { result in
             switch result {
             case .success(let fetchedRepos):
-                DispatchQueue.main.async { [self] in
-                    Logger.shared.debug("Data received: \(repos)")
-                    let sortedRepos = fetchedRepos.sorted { $0.currentPeriodStars > $1.currentPeriodStars }
-                    self.repos = sortedRepos
-                }
+                    DispatchQueue.main.async { [self] in
+                        Logger.shared.debug("Data received: \(repos)")
+                        let sortedRepos = fetchedRepos.sorted { $0.currentPeriodStars > $1.currentPeriodStars }
+                        self.repos = sortedRepos
+                    }
             case .failure(let error):
-                Logger.shared.error("\(error)")
-                self.alertManager.handle(error: .noData)
+                    Logger.shared.error("\(error)")
+                    self.alertManager.handle(error: .noData)
             }
-            self.isLoading = false
+            
+            DispatchQueue.main.async { [self] in
+                self.isLoading = false
+            }
         }
     }
 }
