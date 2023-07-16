@@ -9,8 +9,7 @@
 // - verify accessibility with physical device
 // - final pass physical device test:
     // all tabs, all translations, accessibility mode on/off, dark mode persisting state, loggout and loggedin states
-// - rearrange things into folders
-// - make repo public
+// - make repo public - ask for feedback?
 // - launch details
     // - register for apple developer program 99$ USD
     // https://developer.apple.com/programs/enroll/
@@ -44,12 +43,12 @@
     // - release automatically or manually (you choose)
 
 // demo 2 target:
-// - unit test the most important parts - should be done before refactor, that way we know if the refactor broke anything
-// - address all TODOS
-// - convert completion handlers to futures
+// - unit test the most important parts - should be done before refactoring, that way we know if the refactor broke anything
 // - filter on programming language if one specified, otherwise all. always default back to all on launch.
 // - TokenManager does too much, exclude the parts that have to do with GithubAPI
-// - use result wherever applicable to wrap the response value, that way the caller can switch on failure if need.
+// - convert completion handlers to futures
+// - address all TODOS
+// - use Result to wrap response values, that way the caller can switch on failure if need.
 // - introduce abstractions over ThreadQueue.main.dataTask in NetworkManager?
 // - coffee?
 
