@@ -76,6 +76,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9110DE4B2A643A11007B007E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9110DE4D2A643A26007B007E /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		914F8C892A59BACD00FF5147 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +121,8 @@
 		915DED542A01F1AE00632613 /* TrendingRepos */ = {
 			isa = PBXGroup;
 			children = (
+				9110DE4D2A643A26007B007E /* Managers */,
+				9110DE4B2A643A11007B007E /* Models */,
 				915DED5B2A01F1AF00632613 /* Preview Content */,
 				914F8C892A59BACD00FF5147 /* Utils */,
 				91B02F672A47773700FD1BBC /* TokenManager.swift */,

@@ -22,7 +22,7 @@ struct RepoDetailsView: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .lineLimit(Constants.Layout.singleLine)
             
-            Text(repo.description)
+            Text(repo.description.isEmpty ? NSLocalizedString("repo_no_description", comment: "No description for item") : repo.description)
                 .font(.subheadline)
                 .foregroundColor(.gray)
                 .multilineTextAlignment(.leading)

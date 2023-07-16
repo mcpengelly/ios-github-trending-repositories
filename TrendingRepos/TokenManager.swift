@@ -77,7 +77,6 @@ class TokenManager: ObservableObject {
             "client_secret": clientSecret,
             "code": authCode
         ]
-        print("parameters", parameters)
         
         request.httpBody = try? JSONSerialization.data(withJSONObject: parameters)
         

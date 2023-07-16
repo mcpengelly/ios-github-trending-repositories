@@ -21,5 +21,7 @@
 "toggle_dark_mode" = "Toggle Dark Mode";
 "toggled_dark_mode" = "Toggled Dark Mode";
 "repo_accessibility_label" = "Total Stars: %@, number of stars since period: %@, total forks: %@, coding language used: %@";
+"repo_no_description" = "This repository has no description.";
+
 
 
