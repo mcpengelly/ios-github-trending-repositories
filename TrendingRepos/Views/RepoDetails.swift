@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct RepoDetailsView: View {
+struct RepoDetails: View {
     @EnvironmentObject var tokenManager: TokenManager
     @EnvironmentObject var alertManager: AlertManager
     @EnvironmentObject var darkModeManager: DarkModeManager

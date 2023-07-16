@@ -15,10 +15,10 @@ struct RepoItem: View {
         VStack(alignment: .leading) {
             if let url = URL(string: repo.url) {
                 Link(destination: url) {
-                    RepoDetailsView(repo: repo)
+                    RepoDetails(repo: repo)
                 }
             } else {
-                RepoDetailsView(repo: repo)
+                RepoDetails(repo: repo)
             }
         }
     }

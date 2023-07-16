@@ -28,8 +28,8 @@
 		91B02DD12A3E165900FD1BBC /* RepoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B02DD02A3E165900FD1BBC /* RepoList.swift */; };
 		91B02DD32A3E1A7800FD1BBC /* RepoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B02DD22A3E1A7800FD1BBC /* RepoItem.swift */; };
 		91B02F682A47773700FD1BBC /* TokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B02F672A47773700FD1BBC /* TokenManager.swift */; };
-		91B02F6E2A5480EB00FD1BBC /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B02F6D2A5480EB00FD1BBC /* KeychainHelper.swift */; };
-		91B02F702A55C77000FD1BBC /* RepoDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B02F6F2A55C77000FD1BBC /* RepoDetailsView.swift */; };
+		91B02F6E2A5480EB00FD1BBC /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B02F6D2A5480EB00FD1BBC /* KeychainManager.swift */; };
+		91B02F702A55C77000FD1BBC /* RepoDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B02F6F2A55C77000FD1BBC /* RepoDetails.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,8 +61,8 @@
 		91B02DD02A3E165900FD1BBC /* RepoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoList.swift; sourceTree = "<group>"; };
 		91B02DD22A3E1A7800FD1BBC /* RepoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoItem.swift; sourceTree = "<group>"; };
 		91B02F672A47773700FD1BBC /* TokenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenManager.swift; sourceTree = "<group>"; };
-		91B02F6D2A5480EB00FD1BBC /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
-		91B02F6F2A55C77000FD1BBC /* RepoDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoDetailsView.swift; sourceTree = "<group>"; };
+		91B02F6D2A5480EB00FD1BBC /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
+		91B02F6F2A55C77000FD1BBC /* RepoDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoDetails.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +79,7 @@
 		9110DE4B2A643A11007B007E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				912178AB2A59AD9900B1E203 /* TrendingReposViewModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -86,16 +87,49 @@
 		9110DE4D2A643A26007B007E /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				91B02F6D2A5480EB00FD1BBC /* KeychainManager.swift */,
+				912178A72A58B7C500B1E203 /* AlertManager.swift */,
+				91B02F672A47773700FD1BBC /* TokenManager.swift */,
+				91048C9F2A5AEE18006CD876 /* DarkModeManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		9110DE4E2A643A77007B007E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				914F8C8C2A59BB1B00FF5147 /* Color+Extensions.swift */,
+				914F8C8E2A59BB2B00FF5147 /* URL+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9110DE4F2A643B19007B007E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				91B02DD22A3E1A7800FD1BBC /* RepoItem.swift */,
+				91B02DD02A3E165900FD1BBC /* RepoList.swift */,
+				91B02DCE2A3E163800FD1BBC /* RepoStats.swift */,
+				91B02F6F2A55C77000FD1BBC /* RepoDetails.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9110DE502A643B34007B007E /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				915DED632A01F21700632613 /* NetworkManager.swift */,
+				914F8C902A59BF5D00FF5147 /* GithubAPI.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		914F8C892A59BACD00FF5147 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				912178A02A5880B900B1E203 /* Logger.swift */,
+				912178A32A589BC800B1E203 /* Constants.swift */,
 				914F8C8A2A59BAE700FF5147 /* TimeFrame.swift */,
-				914F8C8C2A59BB1B00FF5147 /* Color+Extensions.swift */,
-				914F8C8E2A59BB2B00FF5147 /* URL+Extensions.swift */,
 				9110DE342A61B214007B007E /* SecretHelper.swift */,
 			);
 			path = Utils;
@@ -121,25 +155,15 @@
 		915DED542A01F1AE00632613 /* TrendingRepos */ = {
 			isa = PBXGroup;
 			children = (
-				9110DE4D2A643A26007B007E /* Managers */,
-				9110DE4B2A643A11007B007E /* Models */,
-				915DED5B2A01F1AF00632613 /* Preview Content */,
-				914F8C892A59BACD00FF5147 /* Utils */,
-				91B02F672A47773700FD1BBC /* TokenManager.swift */,
-				91B02DD22A3E1A7800FD1BBC /* RepoItem.swift */,
-				91048C9F2A5AEE18006CD876 /* DarkModeManager.swift */,
-				91B02DD02A3E165900FD1BBC /* RepoList.swift */,
-				915DED632A01F21700632613 /* NetworkManager.swift */,
 				915DED552A01F1AE00632613 /* TrendingReposApp.swift */,
 				915DED572A01F1AE00632613 /* ContentView.swift */,
-				91B02DCE2A3E163800FD1BBC /* RepoStats.swift */,
-				91B02F6D2A5480EB00FD1BBC /* KeychainHelper.swift */,
-				91B02F6F2A55C77000FD1BBC /* RepoDetailsView.swift */,
-				912178A02A5880B900B1E203 /* Logger.swift */,
-				912178A32A589BC800B1E203 /* Constants.swift */,
-				912178A72A58B7C500B1E203 /* AlertManager.swift */,
-				912178AB2A59AD9900B1E203 /* TrendingReposViewModel.swift */,
-				914F8C902A59BF5D00FF5147 /* GithubAPI.swift */,
+				9110DE4B2A643A11007B007E /* Models */,
+				9110DE4F2A643B19007B007E /* Views */,
+				9110DE4D2A643A26007B007E /* Managers */,
+				9110DE502A643B34007B007E /* Network */,
+				9110DE4E2A643A77007B007E /* Extensions */,
+				914F8C892A59BACD00FF5147 /* Utils */,
+				915DED5B2A01F1AF00632613 /* Preview Content */,
 				91AFE9302A11A2CD0033B388 /* Info.plist */,
 				9110DE322A61B127007B007E /* Secrets.plist */,
 				915DED592A01F1AF00632613 /* Assets.xcassets */,
@@ -264,10 +288,10 @@
 				914F8C8D2A59BB1B00FF5147 /* Color+Extensions.swift in Sources */,
 				91B02DCF2A3E163800FD1BBC /* RepoStats.swift in Sources */,
 				915DED582A01F1AE00632613 /* ContentView.swift in Sources */,
-				91B02F702A55C77000FD1BBC /* RepoDetailsView.swift in Sources */,
+				91B02F702A55C77000FD1BBC /* RepoDetails.swift in Sources */,
 				912178A12A5880B900B1E203 /* Logger.swift in Sources */,
 				914F8C912A59BF5D00FF5147 /* GithubAPI.swift in Sources */,
-				91B02F6E2A5480EB00FD1BBC /* KeychainHelper.swift in Sources */,
+				91B02F6E2A5480EB00FD1BBC /* KeychainManager.swift in Sources */,
 				912178A82A58B7C500B1E203 /* AlertManager.swift in Sources */,
 				915DED562A01F1AE00632613 /* TrendingReposApp.swift in Sources */,
 				914F8C8F2A59BB2B00FF5147 /* URL+Extensions.swift in Sources */,

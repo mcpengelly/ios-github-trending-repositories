@@ -23,7 +23,7 @@ struct ContentView: View {
             darkModeManager.toggleDarkMode()
             UIAccessibility.post(
                 notification: .announcement,
-                argument: NSLocalizedString("toggled_dark_mode", comment: "After toggle announcement")
+                argument: NSLocalizedString("toggled_dark_mode", comment: "After dark mode toggle announcement")
             )
         }, label: {
             Image(systemName: darkModeManager.darkModeEnabled ? "sun.max.fill" : "moon.fill")

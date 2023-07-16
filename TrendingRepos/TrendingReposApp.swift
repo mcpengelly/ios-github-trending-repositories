@@ -37,8 +37,8 @@
             // Dark Mode: Protect your eyes by toggling darkmod within the app. Defaults to your ios setting
             // Open Source: the code is open to everyone and will remain so
             // A11y Compliant: Supports IOS screenreader
-            // Internationalization: Supports english, french, german, italian, portugeuse, spanish. If you want more just raise an Issue with the requested language.
-                
+            // Internationalization: Supports english, french, german, italian, portugeuse, spanish.
+                // If you want more just raise a Github Issue with the requested language.
     // - expect apple review to take 3 business days
     // - upload an archived app file to app store connect - how to generate archived app when time comes?
     // - release automatically or manually (you choose)

@@ -12,8 +12,4 @@ struct Constants {
         static let multiLine = 4
         static let singleLine = 1
     }
-    
-//    struct Network {
-//        static let baseUrl = "https://github.com/login/oauth"
-//    }
 }
