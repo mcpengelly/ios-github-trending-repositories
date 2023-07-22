@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		91048CA02A5AEE18006CD876 /* DarkModeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91048C9F2A5AEE18006CD876 /* DarkModeManager.swift */; };
-		9110DE332A61B127007B007E /* Secrets.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9110DE322A61B127007B007E /* Secrets.plist */; };
 		9110DE352A61B214007B007E /* SecretHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9110DE342A61B214007B007E /* SecretHelper.swift */; };
 		9110DE412A61CE04007B007E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9110DE432A61CE04007B007E /* Localizable.strings */; };
 		912178A12A5880B900B1E203 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 912178A02A5880B900B1E203 /* Logger.swift */; };
@@ -30,11 +29,11 @@
 		91B02F682A47773700FD1BBC /* TokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B02F672A47773700FD1BBC /* TokenManager.swift */; };
 		91B02F6E2A5480EB00FD1BBC /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B02F6D2A5480EB00FD1BBC /* KeychainManager.swift */; };
 		91B02F702A55C77000FD1BBC /* RepoDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B02F6F2A55C77000FD1BBC /* RepoDetails.swift */; };
+		FF464C212A6C3D8C008EA72C /* Secrets.plist in Resources */ = {isa = PBXBuildFile; fileRef = FF464C202A6C3D8C008EA72C /* Secrets.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		91048C9F2A5AEE18006CD876 /* DarkModeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeManager.swift; sourceTree = "<group>"; };
-		9110DE322A61B127007B007E /* Secrets.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Secrets.plist; sourceTree = "<group>"; };
 		9110DE342A61B214007B007E /* SecretHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretHelper.swift; sourceTree = "<group>"; };
 		9110DE422A61CE04007B007E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9110DE442A61CE06007B007E /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -63,6 +62,7 @@
 		91B02F672A47773700FD1BBC /* TokenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenManager.swift; sourceTree = "<group>"; };
 		91B02F6D2A5480EB00FD1BBC /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
 		91B02F6F2A55C77000FD1BBC /* RepoDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoDetails.swift; sourceTree = "<group>"; };
+		FF464C202A6C3D8C008EA72C /* Secrets.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Secrets.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,7 +165,7 @@
 				914F8C892A59BACD00FF5147 /* Utils */,
 				915DED5B2A01F1AF00632613 /* Preview Content */,
 				91AFE9302A11A2CD0033B388 /* Info.plist */,
-				9110DE322A61B127007B007E /* Secrets.plist */,
+				FF464C202A6C3D8C008EA72C /* Secrets.plist */,
 				915DED592A01F1AF00632613 /* Assets.xcassets */,
 			);
 			path = TrendingRepos;
@@ -243,9 +243,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF464C212A6C3D8C008EA72C /* Secrets.plist in Resources */,
 				915DED5D2A01F1AF00632613 /* Preview Assets.xcassets in Resources */,
 				9110DE412A61CE04007B007E /* Localizable.strings in Resources */,
-				9110DE332A61B127007B007E /* Secrets.plist in Resources */,
 				915DED5A2A01F1AF00632613 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
