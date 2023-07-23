@@ -30,7 +30,20 @@
 		91B02F6E2A5480EB00FD1BBC /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B02F6D2A5480EB00FD1BBC /* KeychainManager.swift */; };
 		91B02F702A55C77000FD1BBC /* RepoDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B02F6F2A55C77000FD1BBC /* RepoDetails.swift */; };
 		FF464C212A6C3D8C008EA72C /* Secrets.plist in Resources */ = {isa = PBXBuildFile; fileRef = FF464C202A6C3D8C008EA72C /* Secrets.plist */; };
+		FF464C292A6C4025008EA72C /* TrendingReposTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF464C282A6C4025008EA72C /* TrendingReposTests.swift */; };
+		FF464C302A6C40DF008EA72C /* NetworkManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF464C2F2A6C40DF008EA72C /* NetworkManagerTests.swift */; };
+		FF6EDEB72A6DB879004333E7 /* RepoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6EDEB62A6DB879004333E7 /* RepoModel.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FF464C2A2A6C4025008EA72C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 915DED4A2A01F1AE00632613 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 915DED512A01F1AE00632613;
+			remoteInfo = TrendingRepos;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		91048C9F2A5AEE18006CD876 /* DarkModeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeManager.swift; sourceTree = "<group>"; };
@@ -63,10 +76,21 @@
 		91B02F6D2A5480EB00FD1BBC /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
 		91B02F6F2A55C77000FD1BBC /* RepoDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoDetails.swift; sourceTree = "<group>"; };
 		FF464C202A6C3D8C008EA72C /* Secrets.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Secrets.plist; sourceTree = "<group>"; };
+		FF464C262A6C4025008EA72C /* TrendingReposTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrendingReposTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF464C282A6C4025008EA72C /* TrendingReposTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingReposTests.swift; sourceTree = "<group>"; };
+		FF464C2F2A6C40DF008EA72C /* NetworkManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerTests.swift; sourceTree = "<group>"; };
+		FF6EDEB62A6DB879004333E7 /* RepoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		915DED4F2A01F1AE00632613 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF464C232A6C4025008EA72C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -80,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				912178AB2A59AD9900B1E203 /* TrendingReposViewModel.swift */,
+				FF6EDEB62A6DB879004333E7 /* RepoModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -140,6 +165,7 @@
 			children = (
 				9110DE432A61CE04007B007E /* Localizable.strings */,
 				915DED542A01F1AE00632613 /* TrendingRepos */,
+				FF464C272A6C4025008EA72C /* TrendingReposTests */,
 				915DED532A01F1AE00632613 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -148,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				915DED522A01F1AE00632613 /* TrendingRepos.app */,
+				FF464C262A6C4025008EA72C /* TrendingReposTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -179,6 +206,15 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		FF464C272A6C4025008EA72C /* TrendingReposTests */ = {
+			isa = PBXGroup;
+			children = (
+				FF464C282A6C4025008EA72C /* TrendingReposTests.swift */,
+				FF464C2F2A6C40DF008EA72C /* NetworkManagerTests.swift */,
+			);
+			path = TrendingReposTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -200,6 +236,24 @@
 			productReference = 915DED522A01F1AE00632613 /* TrendingRepos.app */;
 			productType = "com.apple.product-type.application";
 		};
+		FF464C252A6C4025008EA72C /* TrendingReposTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF464C2C2A6C4025008EA72C /* Build configuration list for PBXNativeTarget "TrendingReposTests" */;
+			buildPhases = (
+				FF464C222A6C4025008EA72C /* Sources */,
+				FF464C232A6C4025008EA72C /* Frameworks */,
+				FF464C242A6C4025008EA72C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FF464C2B2A6C4025008EA72C /* PBXTargetDependency */,
+			);
+			name = TrendingReposTests;
+			productName = TrendingReposTests;
+			productReference = FF464C262A6C4025008EA72C /* TrendingReposTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -212,6 +266,10 @@
 				TargetAttributes = {
 					915DED512A01F1AE00632613 = {
 						CreatedOnToolsVersion = 14.3;
+					};
+					FF464C252A6C4025008EA72C = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = 915DED512A01F1AE00632613;
 					};
 				};
 			};
@@ -234,6 +292,7 @@
 			projectRoot = "";
 			targets = (
 				915DED512A01F1AE00632613 /* TrendingRepos */,
+				FF464C252A6C4025008EA72C /* TrendingReposTests */,
 			);
 		};
 /* End PBXProject section */
@@ -247,6 +306,13 @@
 				915DED5D2A01F1AF00632613 /* Preview Assets.xcassets in Resources */,
 				9110DE412A61CE04007B007E /* Localizable.strings in Resources */,
 				915DED5A2A01F1AF00632613 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FF464C242A6C4025008EA72C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,6 +357,7 @@
 				91B02F702A55C77000FD1BBC /* RepoDetails.swift in Sources */,
 				912178A12A5880B900B1E203 /* Logger.swift in Sources */,
 				914F8C912A59BF5D00FF5147 /* GithubAPI.swift in Sources */,
+				FF6EDEB72A6DB879004333E7 /* RepoModel.swift in Sources */,
 				91B02F6E2A5480EB00FD1BBC /* KeychainManager.swift in Sources */,
 				912178A82A58B7C500B1E203 /* AlertManager.swift in Sources */,
 				915DED562A01F1AE00632613 /* TrendingReposApp.swift in Sources */,
@@ -300,7 +367,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FF464C222A6C4025008EA72C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF464C302A6C40DF008EA72C /* NetworkManagerTests.swift in Sources */,
+				FF464C292A6C4025008EA72C /* TrendingReposTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FF464C2B2A6C4025008EA72C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 915DED512A01F1AE00632613 /* TrendingRepos */;
+			targetProxy = FF464C2A2A6C4025008EA72C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		9110DE432A61CE04007B007E /* Localizable.strings */ = {
@@ -495,6 +579,44 @@
 			};
 			name = Release;
 		};
+		FF464C2D2A6C4025008EA72C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9477NSAJQ8;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mcpengelly.TrendingReposTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TrendingRepos.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TrendingRepos";
+			};
+			name = Debug;
+		};
+		FF464C2E2A6C4025008EA72C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9477NSAJQ8;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mcpengelly.TrendingReposTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TrendingRepos.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/TrendingRepos";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -512,6 +634,15 @@
 			buildConfigurations = (
 				915DED612A01F1AF00632613 /* Debug */,
 				915DED622A01F1AF00632613 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FF464C2C2A6C4025008EA72C /* Build configuration list for PBXNativeTarget "TrendingReposTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FF464C2D2A6C4025008EA72C /* Debug */,
+				FF464C2E2A6C4025008EA72C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

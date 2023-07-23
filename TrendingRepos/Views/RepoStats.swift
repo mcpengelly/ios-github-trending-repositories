@@ -14,10 +14,10 @@ struct RepoStats: View {
     var darkModeManager: DarkModeManager
     var tokenManager: TokenManager
     var alertManager: AlertManager
-    var repo: SearchResult
+    var repo: RepoModel
     var githubAPI: GithubAPI
     
-    init(repo: SearchResult, tokenManager: TokenManager, alertManager: AlertManager, darkModeManager: DarkModeManager) {
+    init(repo: RepoModel, tokenManager: TokenManager, alertManager: AlertManager, darkModeManager: DarkModeManager) {
         self.tokenManager = tokenManager
         self.alertManager = alertManager
         self.repo = repo
@@ -145,7 +145,7 @@ struct RepoStats: View {
     
     struct RepoStats_Previews: PreviewProvider {
         static var previews: some View {
-            let dummyRepo = SearchResult(
+            let dummyRepo = RepoModel(from: SearchResult(
                 author: "OpenAI",
                 name: "ChatGPT",
                 avatar: "ok",
@@ -155,9 +155,10 @@ struct RepoStats: View {
                 languageColor: "#FF4500",
                 stars: 12345,
                 forks: 1234,
-                currentPeriodStars: 123,
-                builtBy: [Contributor(username: "test123", href: "https://github.com", avatar: "ok")]
+                currentPeriodStars: 123
+//                builtBy: [Contributor(username: "test123", href: "https://github.com", avatar: "ok")]
             )
+          )
             
             // TODO: replace with actual mocks?
             let mockTokenManager = TokenManager()

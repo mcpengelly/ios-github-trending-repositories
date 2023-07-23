@@ -2,10 +2,12 @@ import Foundation
 
 class NetworkManager {
     static let shared = NetworkManager()
-    private let urlSession = URLSession.shared
+    private var urlSession: URLSession
     
-    private init() {}
-    
+    init() {
+        self.urlSession = URLSession.shared
+    }
+
     func fetchTrendingRepos(
         timeFrame: String = "daily",
         language: String? = nil, // TODO: language https://api.gitterapp.com/languages
@@ -23,7 +25,7 @@ class NetworkManager {
         var request = URLRequest(url: url)
         request.setValue("application/vnd.github+json", forHTTPHeaderField: "Accept")
         
-        URLSession.shared.dataTask(with: request) { data, _, error in
+        self.urlSession.dataTask(with: request) { data, _, error in
             if let error = error {
                 Logger.shared.error("error occurred while fetching repos: \(error)")
                 completion(.failure(error))
@@ -47,6 +49,11 @@ class NetworkManager {
             }
         }.resume()
     }
+    
+    // Test helpers for singleton pattern
+    func setSharedSession(_ session: URLSession) {
+        self.urlSession = session
+    }
 }
 
 // TODO: id issue?
@@ -62,7 +69,6 @@ struct SearchResult: Codable, Identifiable {
     let stars: Int
     let forks: Int
     let currentPeriodStars: Int
-    let builtBy: [Contributor]
 }
 
 struct Contributor: Codable {

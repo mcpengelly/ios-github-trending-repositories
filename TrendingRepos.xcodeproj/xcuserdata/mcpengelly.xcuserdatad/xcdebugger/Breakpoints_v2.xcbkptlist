@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "ACC28484-731B-4158-A5FB-DDEA77257464"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CA4574FA-78B5-4421-9902-E91173054D1B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TrendingReposTests/NetworkManagerTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
+            landmarkName = "dataTask(with:completionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E860DD63-A9FF-456C-A5BA-AF2895AA2140"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TrendingReposTests/NetworkManagerTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
+            landmarkName = "dataTask(with:completionHandler:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E860DD63-A9FF-456C-A5BA-AF2895AA2140 - 3e5b53026a88e53"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TrendingReposTests.MockURLSession.dataTask(with: Foundation.URLRequest, completionHandler: (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; __C.NSURLSessionDataTask"
+                  moduleName = "TrendingReposTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mcpengelly/Documents/batcave/projects/swift/ios-github-trending-repositories/TrendingReposTests/NetworkManagerTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "82"
+                  endingLineNumber = "82"
+                  offsetFromSymbolStart = "312">
+               </Location>
+               <Location
+                  uuid = "E860DD63-A9FF-456C-A5BA-AF2895AA2140 - 3e5b53026a88e53"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TrendingReposTests.MockURLSession.dataTask(with: Foundation.URLRequest, completionHandler: (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; __C.NSURLSessionDataTask"
+                  moduleName = "TrendingReposTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mcpengelly/Documents/batcave/projects/swift/ios-github-trending-repositories/TrendingReposTests/NetworkManagerTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "82"
+                  endingLineNumber = "82"
+                  offsetFromSymbolStart = "216">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "02C1E3E6-2E7D-44C2-AEC1-884E09D5096A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TrendingReposTests/NetworkManagerTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "testRequestFormation()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "794E7576-DA84-4E76-8A99-825DDD401087"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TrendingReposTests/NetworkManagerTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "testRequestFormation()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "794E7576-DA84-4E76-8A99-825DDD401087 - 3da0c828f80dd2b9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TrendingReposTests.NetworkManagerTests.testRequestFormation() -&gt; ()"
+                  moduleName = "TrendingReposTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mcpengelly/Documents/batcave/projects/swift/ios-github-trending-repositories/TrendingReposTests/NetworkManagerTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "54"
+                  endingLineNumber = "54"
+                  offsetFromSymbolStart = "476">
+               </Location>
+               <Location
+                  uuid = "794E7576-DA84-4E76-8A99-825DDD401087 - ba7f3bf631e5c9fc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.Array&lt;TrendingRepos.SearchResult&gt;, Swift.Error&gt;) -&gt; () in TrendingReposTests.NetworkManagerTests.testRequestFormation() -&gt; ()"
+                  moduleName = "TrendingReposTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mcpengelly/Documents/batcave/projects/swift/ios-github-trending-repositories/TrendingReposTests/NetworkManagerTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "54"
+                  endingLineNumber = "54"
+                  offsetFromSymbolStart = "28">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8D4C3025-975E-4CBB-A1BD-FA7C2652A958"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TrendingRepos/Network/NetworkManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "fetchTrendingRepos(timeFrame:language:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "8D4C3025-975E-4CBB-A1BD-FA7C2652A958 - d6569c4170182f5e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TrendingRepos.NetworkManager.fetchTrendingRepos(timeFrame: Swift.String, language: Swift.Optional&lt;Swift.String&gt;, completion: (Swift.Result&lt;Swift.Array&lt;TrendingRepos.SearchResult&gt;, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "TrendingRepos"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mcpengelly/Documents/batcave/projects/swift/ios-github-trending-repositories/TrendingRepos/Network/NetworkManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "1616">
+               </Location>
+               <Location
+                  uuid = "8D4C3025-975E-4CBB-A1BD-FA7C2652A958 - 3a23fe315419a222"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in TrendingRepos.NetworkManager.fetchTrendingRepos(timeFrame: Swift.String, language: Swift.Optional&lt;Swift.String&gt;, completion: (Swift.Result&lt;Swift.Array&lt;TrendingRepos.SearchResult&gt;, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "TrendingRepos"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/mcpengelly/Documents/batcave/projects/swift/ios-github-trending-repositories/TrendingRepos/Network/NetworkManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "152">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "765E4737-ADBF-4E4C-9150-45FD09F836A3"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TrendingRepos/Network/NetworkManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "fetchTrendingRepos(timeFrame:language:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A2344ADF-E0F6-432A-9738-56B700305AC3"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TrendingRepos/Network/NetworkManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "fetchTrendingRepos(timeFrame:language:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B6547181-0490-40B2-A899-83097EB74AB6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TrendingRepos/Network/NetworkManager.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "fetchTrendingRepos(timeFrame:language:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

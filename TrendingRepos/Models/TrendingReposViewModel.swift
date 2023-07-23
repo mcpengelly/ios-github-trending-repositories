@@ -8,7 +8,7 @@
 import SwiftUI
 
 class TrendingReposViewModel: ObservableObject {
-    @Published var repos: [SearchResult] = []
+    @Published var repos: [RepoModel] = []
     @Published var isLoading: Bool = false
     @Published var selectedTimeFrame: TimeFrame = .daily
     @Published var isError = false
@@ -34,7 +34,7 @@ class TrendingReposViewModel: ObservableObject {
                     DispatchQueue.main.async { [self] in
                         Logger.shared.debug("Data received: \(repos)")
                         let sortedRepos = fetchedRepos.sorted { $0.currentPeriodStars > $1.currentPeriodStars }
-                        self.repos = sortedRepos
+                        self.repos = sortedRepos.map {RepoModel(from: $0)}
                     }
             case .failure(let error):
                     Logger.shared.error("\(error)")

@@ -13,8 +13,7 @@ struct RepoDetails: View {
     @EnvironmentObject var alertManager: AlertManager
     @EnvironmentObject var darkModeManager: DarkModeManager
     
-    let repo: SearchResult
-    
+    let repo: RepoModel
     var body: some View {
         VStack(alignment: .leading) {
             Text("\(repo.author)/\(repo.name)")

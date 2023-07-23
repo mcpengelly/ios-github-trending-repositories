@@ -11,7 +11,7 @@ import SwiftUI
 struct RepoList: View {
     @EnvironmentObject var tokenManager: TokenManager
     
-    let repos: [SearchResult]
+    let repos: [RepoModel]
     let clientId = valueForSecretKey(named: "CLIENT_ID") ?? ""
     let callbackUrl = "ios-github-trending://callback"
     var loggedIn: Bool {
@@ -19,12 +19,12 @@ struct RepoList: View {
     }
     
     var body: some View {
-        let url = "https://github.com/login/oauth/authorize?client_id=\(clientId)&redirect_uri=\(callbackUrl)&scope=user%20public_repo"
+        let githubAuthURL = "https://github.com/login/oauth/authorize?client_id=\(clientId)&redirect_uri=\(callbackUrl)&scope=user%20public_repo"
         
         VStack {
             if !loggedIn {
                 Link(
-                    destination: URL(string: url)!) {
+                    destination: URL(string: githubAuthURL)!) {
                     Text(NSLocalizedString("login_with_github", comment: "github oauth button"))
                         .frame(minWidth: 0, maxWidth: .infinity)
                         .padding()
