@@ -29,6 +29,10 @@
 		91B02F682A47773700FD1BBC /* TokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B02F672A47773700FD1BBC /* TokenManager.swift */; };
 		91B02F6E2A5480EB00FD1BBC /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B02F6D2A5480EB00FD1BBC /* KeychainManager.swift */; };
 		91B02F702A55C77000FD1BBC /* RepoDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B02F6F2A55C77000FD1BBC /* RepoDetails.swift */; };
+		FF42746D2A7EC8E4009DD2EF /* TokenManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF42746C2A7EC8E4009DD2EF /* TokenManagerTests.swift */; };
+		FF42746F2A7EC8FB009DD2EF /* DarkModeManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF42746E2A7EC8FB009DD2EF /* DarkModeManagerTests.swift */; };
+		FF4274712A7EC90D009DD2EF /* AlertManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4274702A7EC90D009DD2EF /* AlertManagerTests.swift */; };
+		FF4274732A7EC91E009DD2EF /* KeychainManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF4274722A7EC91E009DD2EF /* KeychainManagerTests.swift */; };
 		FF464C212A6C3D8C008EA72C /* Secrets.plist in Resources */ = {isa = PBXBuildFile; fileRef = FF464C202A6C3D8C008EA72C /* Secrets.plist */; };
 		FF464C292A6C4025008EA72C /* TrendingReposTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF464C282A6C4025008EA72C /* TrendingReposTests.swift */; };
 		FF464C302A6C40DF008EA72C /* NetworkManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF464C2F2A6C40DF008EA72C /* NetworkManagerTests.swift */; };
@@ -76,6 +80,10 @@
 		91B02F672A47773700FD1BBC /* TokenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenManager.swift; sourceTree = "<group>"; };
 		91B02F6D2A5480EB00FD1BBC /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
 		91B02F6F2A55C77000FD1BBC /* RepoDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoDetails.swift; sourceTree = "<group>"; };
+		FF42746C2A7EC8E4009DD2EF /* TokenManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenManagerTests.swift; sourceTree = "<group>"; };
+		FF42746E2A7EC8FB009DD2EF /* DarkModeManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkModeManagerTests.swift; sourceTree = "<group>"; };
+		FF4274702A7EC90D009DD2EF /* AlertManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManagerTests.swift; sourceTree = "<group>"; };
+		FF4274722A7EC91E009DD2EF /* KeychainManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManagerTests.swift; sourceTree = "<group>"; };
 		FF464C202A6C3D8C008EA72C /* Secrets.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Secrets.plist; sourceTree = "<group>"; };
 		FF464C262A6C4025008EA72C /* TrendingReposTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrendingReposTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF464C282A6C4025008EA72C /* TrendingReposTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingReposTests.swift; sourceTree = "<group>"; };
@@ -214,6 +222,10 @@
 				FF464C282A6C4025008EA72C /* TrendingReposTests.swift */,
 				FF464C2F2A6C40DF008EA72C /* NetworkManagerTests.swift */,
 				FF6EDEB82A6DC05D004333E7 /* TrendingReposViewModelTests.swift */,
+				FF42746C2A7EC8E4009DD2EF /* TokenManagerTests.swift */,
+				FF42746E2A7EC8FB009DD2EF /* DarkModeManagerTests.swift */,
+				FF4274702A7EC90D009DD2EF /* AlertManagerTests.swift */,
+				FF4274722A7EC91E009DD2EF /* KeychainManagerTests.swift */,
 			);
 			path = TrendingReposTests;
 			sourceTree = "<group>";
@@ -374,9 +386,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF42746F2A7EC8FB009DD2EF /* DarkModeManagerTests.swift in Sources */,
 				FF464C302A6C40DF008EA72C /* NetworkManagerTests.swift in Sources */,
+				FF4274712A7EC90D009DD2EF /* AlertManagerTests.swift in Sources */,
+				FF42746D2A7EC8E4009DD2EF /* TokenManagerTests.swift in Sources */,
 				FF464C292A6C4025008EA72C /* TrendingReposTests.swift in Sources */,
 				FF6EDEB92A6DC05D004333E7 /* TrendingReposViewModelTests.swift in Sources */,
+				FF4274732A7EC91E009DD2EF /* KeychainManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
