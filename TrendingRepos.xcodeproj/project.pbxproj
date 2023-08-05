@@ -33,6 +33,7 @@
 		FF464C292A6C4025008EA72C /* TrendingReposTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF464C282A6C4025008EA72C /* TrendingReposTests.swift */; };
 		FF464C302A6C40DF008EA72C /* NetworkManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF464C2F2A6C40DF008EA72C /* NetworkManagerTests.swift */; };
 		FF6EDEB72A6DB879004333E7 /* RepoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6EDEB62A6DB879004333E7 /* RepoModel.swift */; };
+		FF6EDEB92A6DC05D004333E7 /* TrendingReposViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6EDEB82A6DC05D004333E7 /* TrendingReposViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		FF464C282A6C4025008EA72C /* TrendingReposTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingReposTests.swift; sourceTree = "<group>"; };
 		FF464C2F2A6C40DF008EA72C /* NetworkManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerTests.swift; sourceTree = "<group>"; };
 		FF6EDEB62A6DB879004333E7 /* RepoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoModel.swift; sourceTree = "<group>"; };
+		FF6EDEB82A6DC05D004333E7 /* TrendingReposViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingReposViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +213,7 @@
 			children = (
 				FF464C282A6C4025008EA72C /* TrendingReposTests.swift */,
 				FF464C2F2A6C40DF008EA72C /* NetworkManagerTests.swift */,
+				FF6EDEB82A6DC05D004333E7 /* TrendingReposViewModel.swift */,
 			);
 			path = TrendingReposTests;
 			sourceTree = "<group>";
@@ -373,6 +376,7 @@
 			files = (
 				FF464C302A6C40DF008EA72C /* NetworkManagerTests.swift in Sources */,
 				FF464C292A6C4025008EA72C /* TrendingReposTests.swift in Sources */,
+				FF6EDEB92A6DC05D004333E7 /* TrendingReposViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

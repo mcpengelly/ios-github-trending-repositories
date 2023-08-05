@@ -15,10 +15,12 @@ class TrendingReposViewModel: ObservableObject {
     
     var tokenManager: TokenManager
     var alertManager: AlertManager
+    var networkManager: NetworkManager
     
-    init(tokenManager: TokenManager, alertManager: AlertManager) {
+    init(tokenManager: TokenManager, alertManager: AlertManager, networkManager: NetworkManager = NetworkManager.shared) {
         self.tokenManager = tokenManager
         self.alertManager = alertManager
+        self.networkManager = networkManager
     }
     
     var loggedIn: Bool {
@@ -28,17 +30,20 @@ class TrendingReposViewModel: ObservableObject {
     func getTrendingRepositories(timeFrame: String) {
         isLoading = true
         
-        NetworkManager.shared.fetchTrendingRepos(timeFrame: timeFrame) { result in
+        networkManager.fetchTrendingRepos(timeFrame: timeFrame) { result in
             switch result {
             case .success(let fetchedRepos):
-                    DispatchQueue.main.async { [self] in
-                        Logger.shared.debug("Data received: \(repos)")
-                        let sortedRepos = fetchedRepos.sorted { $0.currentPeriodStars > $1.currentPeriodStars }
-                        self.repos = sortedRepos.map {RepoModel(from: $0)}
-                    }
+                DispatchQueue.main.async { [self] in
+                    Logger.shared.debug("Data received: \(repos)")
+                    let sortedRepos = fetchedRepos.sorted { $0.currentPeriodStars > $1.currentPeriodStars }
+                    self.repos = sortedRepos.map {RepoModel(from: $0)}
+                }
             case .failure(let error):
-                    Logger.shared.error("\(error)")
-                    self.alertManager.handle(error: .noData)
+                Logger.shared.error("\(error)")
+                self.alertManager.handle(error: .noData)
+                DispatchQueue.main.async { [self] in
+                    isError = true
+                }
             }
             
             DispatchQueue.main.async { [self] in
