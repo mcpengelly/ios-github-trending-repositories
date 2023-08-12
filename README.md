@@ -1,17 +1,25 @@
 # IOS Github Trending
 
-### Goal: Provide a simple and interactive interface for keeping up on the latest trending code and software trends via star trends.
+### Goal: Provide a simple and intuative interface for keeping up on the latest trending code and software trends via github star trends.
 
 ### Features
  
 - List trending repositories on github by Day, Week, Month
 - Quickly see information such as author, organization, stars, starsSinceXPeriod, forks and language in an intuitive interface
-- Login with github to star repos on behalf of your github profile, so you can keep track of the things you liked
+- Login with github to star repos on behalf of your github profile, so you can keep track of the things you liked within Github itself
 
-### Privacy
+### Roadmap
 
-The app is usable anonymously for getting info, but if you want to star repos, you need to login with Github. Just hit the button in the app and youll be redirected to Oauth Github for login.
+- TODO: include
 
-The only things we use your Github permissions for are:
-- starring/unstarring a repo
-- checking if a repo is already starred or not
+### Support
+
+Need help? Something not working? or your language not supported? 
+
+Open an Issue here on Github, be sure to include any relevant info like:
+
+- How to reproduce the Issue
+- What you expect to happen
+- The device you are using
+
+and we'll take a look ASAP.

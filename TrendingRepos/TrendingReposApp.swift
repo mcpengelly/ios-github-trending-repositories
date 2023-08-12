@@ -10,35 +10,32 @@
 // - final pass physical device test:
     // all tabs, all translations, accessibility mode on/off, dark mode persisting state, loggout and loggedin states
 // - make repo public - ask for feedback?
-// - launch details
-    // - register for apple developer program 99$ USD
-    // https://developer.apple.com/programs/enroll/
+// - launch checklist
     // - see app store review guidelines
     // - testflight? how?
-    // - app assets:
-        // title: Trending Github Projects (ios) - ensure github app has the same name
+    // - app metadata:
+        // title: Trending Github Projects
         // description: Keep up to date with the latest daily, weekly & monthly trending code repositories straight from the source!
         // keywords: github, trending, code, respository, latest, popular, discovery, tools
         // demo: check slack for vid - refilm demo after latest features - refilm demo
         // Web APIs used:
         // 1. Unofficial github trending repositories: https://github.com/alisoft/github-trending-api
-        // 2. Official github OAuth, star/unstar repositories on behalf of the user & checking users star status
+            // Lists github repositories by recent popularity; Unofficial Github Trending API was used to access trending repositories data which are not available through official Github APIs.
+        // 2. Official login with Github (via OAuth), star/unstar repositories on behalf of the user & checking users star status
         // Native APIs:
             // IOS Keychain:
-                // fields: githubAccessToken
+                // fields: githubAccessToken: We securely store the users access token so the user can be authenticated when they reopen the app after closing it.
             // UserDefaults:
-                // fields: darkModeEnabled
+                // fields: darkModeEnabled: we store the users preference for dark mode so they only need to set it one time. By default the
         // Secrets.plist (to fork/work on the repo you need this setup, you can make your own oauth app)
             // fields: CLIENT_ID & CLIENT_SECRET
         // Features:
             // Finds Trending Projects: Keep up to date with the latest code projects on github at a glance
             // Github Oauth Integeration: Star repositories as though you were on Github.com
-            // Dark Mode: Protect your eyes by toggling darkmod within the app. Defaults to your ios setting
-            // Open Source: the code is open to everyone and will remain so
+            // Dark Mode: Protect your eyes by toggling darkmode within the app. Defaults to your ios preference
+            // Open Source: the code is open to everyone and will remain that way
             // A11y Compliant: Supports IOS screenreader
-            // Internationalization: Supports english, french, german, italian, portugeuse, spanish.
-                // If you want more just raise a Github Issue with the requested language.
-    // - expect apple review to take 3 business days
+            // Internationalization: Supports English, French, German, Italian, Portugeuse, Spanish languages. Configured via IOS settings
     // - upload an archived app file to app store connect - how to generate archived app when time comes?
     // - release automatically or manually (you choose)
 
