@@ -27,8 +27,8 @@
                 // fields: githubAccessToken: We securely store the users access token so the user can be authenticated when they reopen the app after closing it.
             // UserDefaults:
                 // fields: darkModeEnabled: we store the users preference for dark mode so they only need to set it one time. By default the
-        // Secrets.plist (to fork/work on the repo you need this setup, you can make your own oauth app)
-            // fields: CLIENT_ID & CLIENT_SECRET
+// Secrets.plist (to fork/work on the repo you need this setup, you can make your own oauth app)
+    // fields: CLIENT_ID & CLIENT_SECRET
         // Features:
             // Finds Trending Projects: Keep up to date with the latest code projects on github at a glance
             // Github Oauth Integeration: Star repositories as though you were on Github.com
