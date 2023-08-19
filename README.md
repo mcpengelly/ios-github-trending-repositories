@@ -4,16 +4,16 @@
 
 ### Goal 
 
-Keep up to date with the latest daily, weekly & monthly trending code repositories straight from the source!
+Keep up to date with the latest daily, weekly & monthly trending code repositories on Github straight from the source!
 
 ### Features
  
 - List trending repositories on Github by number of stars in the last: Day, Week or Month
 - Quickly see information such as author, organization, stars, starsSinceXPeriod, forks and language in an intuitive interface
-- Oauth Integeration: Star repositories as though you were on Github.com
-- Dark Mode: Protect your eyes by toggling darkmode within the app. Defaults to your ios preference
+- Oauth Integeration: Star repositories as though you were on Github.com (Optional)
+- Dark Mode: Protect your eyes by toggling darkmode within the app. Defaults to iOS System Settings
 - Source: the code is open to everyone and will remain that way
-- Internationalization: Supports English, French, German, Italian, Portugeuse, Spanish languages. Configured via IOS settings
+- Internationalization: Supports English, French, German, Italian, Portugeuse, and Spanish. Configure via IOS System Settings
 
 ### Documentation
 
@@ -42,6 +42,6 @@ and we'll take a look ASAP
 
 - refactor TokenManager: does too much, exclude the parts that have to do with GithubAPI
 - convert completion handlers to futures
-- address all in code TODOS
 - use Result to wrap response values, that way the caller can switch on failure if need.
-- introduce abstraction over ThreadQueue.main.dataTask in NetworkManager?
+- introduce abstraction over ThreadQueue.main.dataTask in NetworkManager
+- address all in code TODOS

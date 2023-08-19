@@ -6,14 +6,11 @@
 //
 
 // TODO:
-// - verify accessibility with physical device
-    // - app store connect
-    // - testflight? how?
-        // title: Trending Github Projects
-        // description: Keep up to date with the latest daily, weekly & monthly trending code repositories straight from the source!
-        // keywords: github, trending, code, respository, latest, popular, discovery, tools
+// - app store connect
+    // - Github third part content concern
+    // - testflight testing
     // - upload an archived app file to app store connect - how to generate archived app when time comes?
-    // - release automatically or manually (you choose)
+    // - release automatically
 
 import SwiftUI
 
