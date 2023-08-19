@@ -1,4 +1,4 @@
-# Github Trending Projects
+# CodeScout: Explore Code Trends 
 
 ![App icon](./TrendingRepos/Assets.xcassets/AppIcon.appiconset/icon-256.png)
 
@@ -30,7 +30,7 @@ Open an Issue here on Github, be sure to include any relevant info like:
 - what you expect to happen
 - the device(s) you are using
 
-and we'll take a look ASAP.
+and we'll take a look ASAP
 
 ### Roadmap
 

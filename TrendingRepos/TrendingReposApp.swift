@@ -5,17 +5,15 @@
 //  Created by Matt Pengelly on 2023-05-02.
 //
 
-// demo target:
+// TODO:
 // - verify accessibility with physical device
-    // - see app store review guidelines
+    // - app store connect
     // - testflight? how?
-    // - app metadata:
         // title: Trending Github Projects
         // description: Keep up to date with the latest daily, weekly & monthly trending code repositories straight from the source!
         // keywords: github, trending, code, respository, latest, popular, discovery, tools
     // - upload an archived app file to app store connect - how to generate archived app when time comes?
     // - release automatically or manually (you choose)
-
 
 import SwiftUI
 
