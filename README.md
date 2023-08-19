@@ -1,8 +1,10 @@
-# IOS Github Trending
+# Github Trending Projects
+
+![App icon](./TrendingRepos/Assets.xcassets/AppIcon.appiconset/icon-1024.png)
 
 ### Goal 
 
-Keep up to date with the latest code projects on github at a glance
+Keep up to date with the latest daily, weekly & monthly trending code repositories straight from the source!
 
 ### Features
  
@@ -15,8 +17,8 @@ Keep up to date with the latest code projects on github at a glance
 
 ### Documentation
 
-- Privacy Policy
-- Contribution Guidelines
+- [Privacy Policy](./PRIVACY.md)
+- [Contribution Guidelines](./CONTRIBUTING.md)
 
 ### Support
 
@@ -32,4 +34,14 @@ and we'll take a look ASAP.
 
 ### Roadmap
 
-- Accessibility 
+- accessibility
+- filter on programming language if one specified, otherwise all. always default back to all on launch.
+- coffee?
+
+### Tech Debt
+
+- refactor TokenManager: does too much, exclude the parts that have to do with GithubAPI
+- convert completion handlers to futures
+- address all in code TODOS
+- use Result to wrap response values, that way the caller can switch on failure if need.
+- introduce abstraction over ThreadQueue.main.dataTask in NetworkManager?
