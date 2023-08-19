@@ -1,6 +1,6 @@
 # Github Trending Projects
 
-![App icon](./TrendingRepos/Assets.xcassets/AppIcon.appiconsetiicon-256.png)
+![App icon](./TrendingRepos/Assets.xcassets/AppIcon.appiconset/icon-256.png)
 
 ### Goal 
 
