@@ -2,6 +2,14 @@
 
 ![App icon](./TrendingRepos/Assets.xcassets/AppIcon.appiconset/icon-256.png)
 
+Demo:
+
+https://github.com/mcpengelly/ios-github-trending-repositories/assets/8462065/eedf0600-7bdc-47fd-9bc4-0b9d6b6cae65
+
+![IMG_20230906_103136_954](https://github.com/mcpengelly/ios-github-trending-repositories/assets/8462065/6b4f46be-4c8e-4a4d-9520-3113755b1d34)
+![IMG_20230906_103136_501](https://github.com/mcpengelly/ios-github-trending-repositories/assets/8462065/1622e6b5-8440-4feb-be3d-37b68d585a7e)
+
+
 ### Goal 
 
 Keep up to date with the latest daily, weekly & monthly trending code repositories on Github straight from the source!
