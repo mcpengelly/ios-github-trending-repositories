@@ -22,5 +22,6 @@
 "toggled_dark_mode" = "Modo Escuro Alternado";
 "repo_accessibility_label" = "Total de Estrelas: %@, número de estrelas desde o período: %@, forks totais: %@, linguagem de programação utilizada: %@";
 "repo_no_description" = "Este repositório não possui descrição.";
+"github_thirdparty_disclaimer" = "Não estamos afiliados ao GitHub, e esta aplicação está usando um fluxo de dados não oficial que não é fornecido diretamente pelo GitHub. O uso do produto GITHUB, do nome da empresa e/ou do logotipo não implica afiliação ou endosso pela GitHub, Inc.";
 
 

@@ -10,8 +10,18 @@ import SwiftUI
 
 struct RepoList: View {
     @EnvironmentObject var tokenManager: TokenManager
-    
+    let disclaimerText = NSLocalizedString("github_thirdparty_disclaimer", comment: "Third-party GitHub disclaimer")
+
     let repos: [RepoModel]
+    var footer: some View {
+        Group {
+            Text(disclaimerText)
+                .font(.system(size: 12))
+                .foregroundColor(.gray)
+                .multilineTextAlignment(.center)
+                .padding()
+        }
+    }
     let clientId = valueForSecretKey(named: "CLIENT_ID") ?? ""
     let callbackUrl = "ios-github-trending://callback"
     var loggedIn: Bool {
@@ -38,6 +48,8 @@ struct RepoList: View {
             ForEach(repos, id: \.id) { repo in
                 RepoItem(repo: repo)
             }
+            
+            footer
         }
     }
 }

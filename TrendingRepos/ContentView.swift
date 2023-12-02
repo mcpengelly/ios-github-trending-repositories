@@ -18,6 +18,7 @@ struct ContentView: View {
         false: "person.fill.xmark"
     ]
     
+    
     var body: some View {
         let toggleDarkMode = Button(action: {
             darkModeManager.toggleDarkMode()
